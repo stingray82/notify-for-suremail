@@ -5,7 +5,7 @@
  * Tested up to:      6.8.2
  * Requires at least: 6.5
  * Requires PHP:      8.0
- * Version:           0.9.6
+ * Version:           0.9.7
  * Author:            ReallyUsefulPlugins.com
  * Author URI:        https://reallyusefulplugins.com
  * License:           GPL-2.0+
@@ -20,7 +20,7 @@ require_once __DIR__ . '/inc/mainwp-child.php';
 require_once __DIR__ . '/inc/flowmattic.php';
 
 
-define('RUP_NOTIFY_FOR_SUREMAIL_VERSION', '0.9.6');
+define('RUP_NOTIFY_FOR_SUREMAIL_VERSION', '0.9.7');
 
 class Suremail_Notify {
     const OPTION_KEY = 'suremail_notify_options';
@@ -335,8 +335,8 @@ private function truncate( $text, $limit ) {
 
     public function add_settings_page() {
         add_options_page(
-            'Suremail Notify',
-            'Suremail Notify',
+            'Notify for Suremail',
+            'Notify for Suremail',
             'manage_options',
             'suremail-notify',
             [ $this, 'render_settings_page' ]
@@ -410,7 +410,7 @@ private function truncate( $text, $limit ) {
         $opts = $this->get_options();
         ?>
         <div class="wrap sn-wrap">
-            <h1>Suremail Notify</h1>
+            <h1>Notify For SureMail</h1>
 
             <?php if ( isset($_GET['sn_test']) && $_GET['sn_test'] == '1' ) : ?>
                 <div class="notice notice-success is-dismissible">
