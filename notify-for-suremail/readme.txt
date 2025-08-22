@@ -1,0 +1,28 @@
+=== Notify for SureMail ===
+Contributors: reallyusefulplugins
+Donate link: https://reallyusefulplugins.com/donate
+Tags: SureMail, Discord, Pushover, Slack, Webhook
+Requires at least: 6.5
+Tested up to: 6.8.2
+Stable tag: 0.9.6
+Requires PHP: 8.0
+License: GPL-2.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+Sends Pushover, Discord, Generic Webhook and Slack notifications when emails are blocked, fail, or succeed.
+== Description ==
+
+Sends Pushover, Discord, Generic Webhook and Slack notifications when emails are blocked, fail, or succeed.
+
+== Installation ==
+
+1. Upload the `notify-for-suremail` folder to the `/wp-content/plugins/` directory.
+2. Go to a Guttenberg page you will now have a new block.
+3. use the configurator to modify the use bubbles embed
+
+== Frequently Asked Questions ==
+
+== Changelog ==
+= 0.9.0 22 August 2025 =
+New: Initial Release
+New: First Updater Test

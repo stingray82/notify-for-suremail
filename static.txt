@@ -1,0 +1,12 @@
+Sends Pushover, Discord, Generic Webhook and Slack notifications when emails are blocked, fail, or succeed.
+== Description ==
+
+Sends Pushover, Discord, Generic Webhook and Slack notifications when emails are blocked, fail, or succeed.
+
+== Installation ==
+
+1. Upload the `notify-for-suremail` folder to the `/wp-content/plugins/` directory.
+2. Go to a Guttenberg page you will now have a new block.
+3. use the configurator to modify the use bubbles embed
+
+== Frequently Asked Questions ==
