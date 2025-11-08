@@ -297,43 +297,127 @@ deploy_drive() {
   : "${GDRIVE_SYNC_DIR:?Missing GDRIVE_SYNC_DIR}"
   : "${GDRIVE_ZIP_NAME:?Missing GDRIVE_ZIP_NAME}"
   : "${GDRIVE_MANIFEST_NAME:?Missing GDRIVE_MANIFEST_NAME}"
-  : "${GDRIVE_ZIP_FILE_ID:?Missing GDRIVE_ZIP_FILE_ID}"
-  : "${GDRIVE_MANIFEST_FILE_ID:?Missing GDRIVE_MANIFEST_FILE_ID}"
+
+  # helpers
+  extract_drive_id() {
+    # Accept either a raw fileId or any Google Drive URL and return the fileId
+    local in="$1"
+    # strip quotes/spaces
+    in="${in//\"/}"; in="$(echo "$in" | tr -d '[:space:]')"
+    # raw id?
+    if [[ "$in" =~ ^[A-Za-z0-9_-]{10,}$ ]]; then
+      echo "$in"; return 0
+    fi
+    # /file/d/<id>/view...
+    if [[ "$in" =~ /d/([A-Za-z0-9_-]{10,})/view ]]; then
+      echo "${BASH_REMATCH[1]}"; return 0
+    fi
+    # id=<id>
+    if [[ "$in" =~ (^|[?&])id=([A-Za-z0-9_-]{10,}) ]]; then
+      echo "${BASH_REMATCH[2]}"; return 0
+    fi
+    # share links sometimes /open?id=<id>
+    if [[ "$in" =~ open\?id=([A-Za-z0-9_-]{10,}) ]]; then
+      echo "${BASH_REMATCH[1]}"; return 0
+    fi
+    # unknown
+    echo ""; return 1
+  }
+
+  # Normalize/resolve IDs (accept raw ID or URL)
+  local ZIP_ID_RAW="${GDRIVE_ZIP_FILE_ID:-}"
+  local MANIFEST_ID_RAW="${GDRIVE_MANIFEST_FILE_ID:-}"
+  local ZIP_ID="$(extract_drive_id "$ZIP_ID_RAW")"
+  local MANIFEST_ID="$(extract_drive_id "$MANIFEST_ID_RAW")"
 
   local drive_dir="$(tr -d '\r' <<<"$GDRIVE_SYNC_DIR")"
   local drive_zip="$drive_dir/$GDRIVE_ZIP_NAME"
   local drive_manifest="$drive_dir/$GDRIVE_MANIFEST_NAME"
 
   mkdir -p "$drive_dir" || die "Cannot create $drive_dir"
-  info "Copying ZIP to Drive-synced path: $drive_zip"
-  cp -f "$zip_file" "$drive_zip" || die "Copy to Drive folder failed"
 
+  # Ensure the two files exist locally so Drive can assign/keep IDs
+  if [[ ! -f "$drive_zip" ]]; then
+    info "Bootstrap: creating initial ZIP at $drive_zip"
+    # copy our freshly built zip as the initial placeholder
+    cp -f "$zip_file" "$drive_zip" || die "Bootstrap copy to Drive folder failed"
+  else
+    info "Copying ZIP to Drive-synced path: $drive_zip"
+    cp -f "$zip_file" "$drive_zip" || die "Copy to Drive folder failed"
+  fi
+
+  if [[ ! -f "$drive_manifest" ]]; then
+    info "Bootstrap: creating empty manifest at $drive_manifest"
+    printf "{}" > "$drive_manifest" || die "Cannot create manifest file"
+  fi
+
+  # Optionally help the user open the folder to grab IDs on first run
+  if [[ "${AUTO_OPEN_EXPLORER:-0}" == "1" ]] && { [[ -z "$ZIP_ID" ]] || [[ -z "$MANIFEST_ID" ]] ; }; then
+    # Windows Git Bash: explorer handles either / or \ paths fine
+    command -v explorer >/dev/null 2>&1 && explorer "$drive_dir" >/dev/null 2>&1 || true
+  fi
+
+  # Compute SHA-256 of the synced ZIP
   info "Computing SHA-256 (PHP)…"
   local sha256
   sha256="$(php -r "echo hash_file('sha256', '$drive_zip');")" || die "SHA-256 failure"
   [[ -n "$sha256" ]] || die "SHA-256 is empty"
 
-  local package_url="https://drive.google.com/uc?export=download&id=$GDRIVE_ZIP_FILE_ID"
+  # If ZIP_ID still missing, decide whether to proceed
+  if [[ -z "$ZIP_ID" ]]; then
+    echo
+    echo "[WARN] GDRIVE_ZIP_FILE_ID not set (or could not be parsed)."
+    echo "       1) In Drive: right-click '$GDRIVE_ZIP_NAME' -> View in web -> copy the ID from /file/d/<ID>/view"
+    echo "       2) Put EITHER the raw ID OR the full link into GDRIVE_ZIP_FILE_ID in your cfg."
+    echo "       3) Re-run the deploy."
+    if [[ "${ALLOW_EMPTY_DRIVE_ID:-0}" != "1" ]]; then
+      echo "[SAFE-STOP] Not writing manifest without a valid ZIP ID (to avoid publishing a broken update feed)."
+      return 1
+    fi
+    echo "[BOOTSTRAP] ALLOW_EMPTY_DRIVE_ID=1 -> writing a placeholder manifest (clients will ignore it)."
+  fi
 
+  # Build URLs (may be empty if we’re bootstrapping)
+  local package_url=""
+  if [[ -n "$ZIP_ID" ]]; then
+    package_url="https://drive.google.com/uc?export=download&id=$ZIP_ID"
+  fi
+
+  # Write UUPD manifest (pretty JSON)
   info "Writing UUPD manifest: $drive_manifest"
   php -r '
+    $ver = getenv("UUPD_VERSION");
+    $zipId = getenv("UUPD_ZIP_ID");
+    $sha = getenv("UUPD_SHA");
+    $pkg = $zipId ? ("https://drive.google.com/uc?export=download&id=".$zipId) : "";
     $m = [
-      "version"       => getenv("UUPD_VERSION"),
-      "drive_file_id" => getenv("UUPD_ZIP_ID"),
-      "package"       => "https://drive.google.com/uc?export=download&id=".getenv("UUPD_ZIP_ID"),
-      "checksum"      => ["algo"=>"sha256","hash"=>getenv("UUPD_SHA")]
+      "version"       => $ver,
+      "drive_file_id" => $zipId ?: "",
+      "package"       => $pkg,
+      "checksum"      => ["algo"=>"sha256","hash"=>$sha],
+      // add a gentle breadcrumb in bootstrap mode; UUPD readers will ignore unknown fields
+      "_note"         => $zipId ? "" : "Bootstrap: set GDRIVE_ZIP_FILE_ID in deploy cfg to finalize package URL"
     ];
     $out = json_encode($m, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
     if ($out===false) { fwrite(STDERR, "JSON encode failed\n"); exit(1); }
     file_put_contents(getenv("UUPD_MANIFEST_PATH"), $out);
-  ' UUPD_VERSION="$version" UUPD_ZIP_ID="$GDRIVE_ZIP_FILE_ID" UUPD_SHA="$sha256" UUPD_MANIFEST_PATH="$drive_manifest" \
+  ' UUPD_VERSION="$version" UUPD_ZIP_ID="$ZIP_ID" UUPD_SHA="$sha256" UUPD_MANIFEST_PATH="$drive_manifest" \
   || die "Failed writing manifest"
 
   ok "Drive manifest updated"
-  echo "  Manifest URL : https://drive.google.com/uc?export=download&id=$GDRIVE_MANIFEST_FILE_ID"
-  echo "  Package  URL : $package_url"
-  echo "  Note: ensure the Drive folder (and files) allow 'Anyone with the link - Viewer'."
+  if [[ -n "$MANIFEST_ID" ]]; then
+    echo "  Manifest URL : https://drive.google.com/uc?export=download&id=$MANIFEST_ID"
+  else
+    echo "  Manifest URL : (set GDRIVE_MANIFEST_FILE_ID in cfg to print the direct link)"
+  fi
+  if [[ -n "$package_url" ]]; then
+    echo "  Package  URL : $package_url"
+  else
+    echo "  Package  URL : (set GDRIVE_ZIP_FILE_ID in cfg to finalize this URL)"
+  fi
+  echo "  Note: ensure folder/files allow 'Anyone with the link - Viewer'."
 }
+
 
 # =====================================================
 # ORCHESTRATE TARGETS
