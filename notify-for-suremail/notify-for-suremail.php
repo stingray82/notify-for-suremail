@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Notify for Suremail
  * Description:       Sends Pushover, Discord, Generic Webhook and Slack notifications when emails are blocked, fail, or succeed.
- * Tested up to:      6.8.2
+ * Tested up to:      6.8.3
  * Requires at least: 6.5
  * Requires PHP:      8.0
  * Version:           0.9.7

@@ -62,9 +62,30 @@ No . It works alongside SureMail — it only **listens for email delivery result
 ## Screenshots
 
 1. **Settings page** – configure Pushover, Slack, Discord, and Webhook.  
+
+   ![Settings Page](https://github.com/stingray82/repo-images/raw/main/notifications-for-suremail/notificaitons-for-suremail-settings-page.png)
+
+   
+
 2. **Example Slack notification** when a WordPress email fails.  
-3. **Example Discord alert** when email delivery is blocked.  
+
+   ![Slack Failed](https://github.com/stingray82/repo-images/raw/main/notifications-for-suremail/suremail-notify-email-failure-slack.png)
+
+   
+
+3. **Example Discord alert** when email delivery is blocked.
+
+   ![Blocked Email](https://github.com/stingray82/repo-images/raw/main/notifications-for-suremail/suremail-notify-email-blocked-discord.png)
+
+   
+
 4. **Example Pushover alert**  when a WordPress email fails
+
+   ![Image](https://github.com/stingray82/repo-images/raw/main/notifications-for-suremail/suremail-notify-email-failure-pushover.png)
+
+   
+
+
 
 ---
 
