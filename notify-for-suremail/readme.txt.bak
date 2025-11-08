@@ -3,7 +3,7 @@ Contributors: reallyusefulplugins
 Donate link: https://reallyusefulplugins.com/donate
 Tags: SureMail, Discord, Pushover, Slack, Webhook
 Requires at least: 6.5
-Tested up to: 6.8.2
+Tested up to: 6.8.3
 Stable tag: 0.9.7
 Requires PHP: 8.0
 License: GPL-2.0-or-later
@@ -21,8 +21,8 @@ Sends Pushover, Discord, Generic Webhook and Slack notifications when emails are
 3. use the configurator to modify the use bubbles embed
 
 == Frequently Asked Questions ==
- 
-== Changelog == 
+
+== Changelog ==
 = 0.9.7 22 August 2025 =
 New: First Updater Test (Update)
 New: Notify for Suremail
