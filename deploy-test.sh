@@ -222,6 +222,33 @@ deploy_local() {
   ok "Local deploy -> $LOCAL_DEST_DIR/$(basename "$zip_file")"
 }
 
+get_sha256() {
+  local path="$1"
+  # 1) Try PHP (works great in Git Bash shells)
+  if command -v php >/dev/null 2>&1; then
+    local out
+    out="$(php -r "echo hash_file('sha256', '$path');" 2>/dev/null || true)"
+    if [[ -n "$out" ]]; then echo "$out"; return 0; fi
+  fi
+  # 2) Try certutil (present on Windows)
+  if command -v certutil >/dev/null 2>&1; then
+    # The hash is printed on line 2; strip spaces/CR
+    local out
+    out="$(certutil -hashfile "$path" SHA256 2>/dev/null | sed -n '2p' | tr -d ' \r' || true)"
+    if [[ -n "$out" ]]; then echo "$out"; return 0; fi
+  fi
+  # 3) Try PowerShell Get-FileHash
+  if command -v powershell >/dev/null 2>&1; then
+    local out
+    out="$(powershell -NoProfile -Command "(Get-FileHash -LiteralPath '$path' -Algorithm SHA256).Hash" 2>/dev/null | tr -d '\r' || true)"
+    if [[ -n "$out" ]]; then echo "$out"; return 0; fi
+  fi
+  return 1
+}
+
+
+
+
 # ---------- Deploy: GITHUB Release ----------
 # Requires: GITHUB_REPO=owner/repo and GITHUB_TOKEN set or token file present
 deploy_github() {
@@ -292,7 +319,6 @@ JSON
 }
 
 # ---------- Deploy: Google Drive (UUPD) ----------
-# Uses Drive for Desktop sync with fixed filenames -> stable file IDs
 deploy_drive() {
   : "${GDRIVE_SYNC_DIR:?Missing GDRIVE_SYNC_DIR}"
   : "${GDRIVE_ZIP_NAME:?Missing GDRIVE_ZIP_NAME}"
@@ -319,10 +345,10 @@ deploy_drive() {
   local ZIP_ID="$(extract_drive_id "$ZIP_ID_RAW")"
   local MANIFEST_ID="$(extract_drive_id "$MANIFEST_ID_RAW")"
 
-  echo "[DEBUG] Drive dir        : $drive_dir"
-  echo "[DEBUG] Drive zip path   : $drive_zip"
-  echo "[DEBUG] Drive manifest   : $drive_manifest"
-  echo "[DEBUG] ZIP_ID (parsed)  : ${ZIP_ID:-<empty>}"
+  echo "[DEBUG] Drive dir          : $drive_dir"
+  echo "[DEBUG] Drive zip path     : $drive_zip"
+  echo "[DEBUG] Drive manifest     : $drive_manifest"
+  echo "[DEBUG] ZIP_ID (parsed)    : ${ZIP_ID:-<empty>}"
   echo "[DEBUG] MANIFEST_ID (parsed): ${MANIFEST_ID:-<empty>}"
 
   mkdir -p "$drive_dir" || die "Cannot create $drive_dir"
@@ -346,9 +372,9 @@ deploy_drive() {
   fi
 
   # Hash from the synced file (what users will download)
-  echo "[INFO] Computing SHA-256 (PHP)…"
+  echo "[INFO] Computing SHA-256…"
   local sha256
-  sha256="$(php -r "echo hash_file('sha256', '$drive_zip');")" || die "SHA-256 failure"
+  sha256="$(get_sha256 "$drive_zip")" || die "SHA-256 failure"
   [[ -n "$sha256" ]] || die "SHA-256 is empty"
   echo "[OK] SHA-256: $sha256"
 
@@ -364,22 +390,93 @@ deploy_drive() {
   local package_url=""
   [[ -n "$ZIP_ID" ]] && package_url="https://drive.google.com/uc?export=download&id=$ZIP_ID"
 
-  # Build JSON with PHP to stdout, then write it (tee)
-echo "[INFO] Building UUPD JSON…"
+  # ---------- Rich manifest fields ----------
+  local slug="$PLUGIN_SLUG"
+  local disp_name="${UUPD_NAME:-$PLUGIN_NAME}"
+  local author="${UUPD_AUTHOR:-}"
+  local author_home="${UUPD_AUTHOR_HOMEPAGE:-}"
+
+  # Requirements (prefer cfg overrides, fall back to headers extracted earlier)
+  local req_php="${UUPD_REQUIRES_PHP:-$requires_php}"
+  local req_wp="${UUPD_REQUIRES:-$requires_at_least}"
+  local tested_wp="${UUPD_TESTED:-$tested_up_to}"
+
+  # last_updated (allow override)
+  local last_updated="${UUPD_LAST_UPDATED:-$(date '+%Y-%m-%d %H:%M:%S')}"
+
+  # Download URL preference: cfg -> GitHub latest (if repo set) -> empty
+  local dl_url="${UUPD_DOWNLOAD_URL:-}"
+  if [[ -z "$dl_url" && -n "${GITHUB_REPO:-}" ]]; then
+    dl_url="https://github.com/$GITHUB_REPO/releases/latest/download/$ZIP_NAME"
+  fi
+
+  # Default banners/icons to your repo’s /uupd/ assets if not explicitly set
+  local gh_user="${GITHUB_REPO%%/*}"
+  local gh_repo="${GITHUB_REPO#*/}"
+  local raw_base=""
+  [[ -n "$gh_user" && -n "$gh_repo" ]] && raw_base="https://raw.githubusercontent.com/$gh_user/$gh_repo/main/uupd"
+
+  local banner_low="${UUPD_BANNER_LOW:-${raw_base:+$raw_base/banner-772x250.png}}"
+  local banner_high="${UUPD_BANNER_HIGH:-${raw_base:+$raw_base/banner-1544x500.png}}"
+  local icon_1x="${UUPD_ICON_1X:-${raw_base:+$raw_base/icon-128.png}}"
+  local icon_2x="${UUPD_ICON_2X:-${raw_base:+$raw_base/icon-256.png}}"
+
+  # Section files (paths may or may not exist)
+  local f_desc="${UUPD_SECTION_DESCRIPTION_FILE:-}"
+  local f_inst="${UUPD_SECTION_INSTALLATION_FILE:-}"
+  local f_faq="${UUPD_SECTION_FAQ_FILE:-}"
+  local f_chg_html="${UUPD_SECTION_CHANGELOG_HTML_FILE:-}"
+
+  # Build JSON with PHP via argv (Windows-safe). PHP will read section files if provided.
+  echo "[INFO] Building rich UUPD JSON…"
   local json
   json="$(php -r '
-    $ver  = $argv[1] ?? "";
-    $zipId= $argv[2] ?? "";
-    $sha  = $argv[3] ?? "";
-    $pkg  = $zipId ? ("https://drive.google.com/uc?export=download&id=".$zipId) : "";
-    $m = [
-      "version"       => $ver,
-      "drive_file_id" => $zipId,
-      "package"       => $pkg,
-      "checksum"      => ["algo"=>"sha256","hash"=>$sha],
+    [$ver,$zipId,$sha,$slug,$name,$author,$authorUrl,$reqPhp,$reqWp,$testedWp,$last,$dl,$bLow,$bHigh,$i1,$i2,$fDesc,$fInst,$fFaq,$fChg] = array_slice($argv,1);
+
+    $read = function($p) {
+      if (!$p) return "";
+      $p = str_replace("\\\\","/",$p);
+      return is_file($p) ? file_get_contents($p) : "";
+    };
+
+    $pkg = $zipId ? ("https://drive.google.com/uc?export=download&id=".$zipId) : "";
+
+    $sections = [
+      "description" => $read($fDesc),
+      "installation" => $read($fInst),
+      "frequently_asked_questions" => $read($fFaq),
+      "changelog" => $read($fChg),
     ];
-    echo json_encode($m, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
-  ' -- "$version" "$ZIP_ID" "$sha256")" || die "PHP JSON build failed"
+    foreach ($sections as $k=>$v) { if ($v === "" || $v === null) unset($sections[$k]); }
+
+    $out = [
+      "slug" => $slug,
+      "name" => $name,
+      "version" => $ver ?: "",
+      "author" => $author ?: "",
+      "author_homepage" => $authorUrl ?: "",
+      "requires_php" => $reqPhp ?: "",
+      "requires" => $reqWp ?: "",
+      "tested" => $testedWp ?: "",
+      "sections" => (object)$sections,
+      "last_updated" => $last,
+      "download_url" => $dl ?: "",
+      "drive_file_id" => $zipId ?: "",
+      "package" => $pkg,
+      "checksum" => ["algo"=>"sha256","hash"=>$sha],
+      "banners" => ["low"=>$bLow ?: "", "high"=>$bHigh ?: ""],
+      "icons" => ["1x"=>$i1 ?: "", "2x"=>$i2 ?: ""],
+    ];
+
+    echo json_encode($out, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
+  ' -- \
+    "$version" "$ZIP_ID" "$sha256" \
+    "$slug" "$disp_name" "$author" "$author_home" \
+    "$req_php" "$req_wp" "$tested_wp" \
+    "$last_updated" "$dl_url" \
+    "$banner_low" "$banner_high" "$icon_1x" "$icon_2x" \
+    "$f_desc" "$f_inst" "$f_faq" "$f_chg_html"
+  )" || die "PHP JSON build failed"
 
   echo "[DEBUG] JSON to write:"
   echo "----------------------"
@@ -387,20 +484,18 @@ echo "[INFO] Building UUPD JSON…"
   echo "----------------------"
 
   printf "%s" "$json" > "$drive_manifest" || die "Write manifest failed"
-  # Extra: flush to disk
   sync || true
 
   ok "Drive manifest updated"
   if [[ -n "$MANIFEST_ID" ]]; then
     echo "  Manifest URL : https://drive.google.com/uc?export=download&id=$MANIFEST_ID"
   else
-    echo "  Manifest URL : (set GDRIVE_MANIFEST_FILE_ID in cfg to print the direct link)"
+    echo "  Manifest URL : (set GDRIVE_MANIFEST_FILE_ID in cfg to print direct link)"
   fi
-
-  if [[ -n "$package_url" ]]; then
-    echo "  Package  URL : $package_url"
+  if [[ -n "$ZIP_ID" ]]; then
+    echo "  Package  URL : https://drive.google.com/uc?export=download&id=$ZIP_ID"
   else
-    echo "  Package  URL : (set GDRIVE_ZIP_FILE_ID in cfg to finalize this URL)"
+    echo "  Package  URL : (set GDRIVE_ZIP_FILE_ID to finalize)"
   fi
   echo "  Note: ensure folder/files allow 'Anyone with the link - Viewer'."
 }
