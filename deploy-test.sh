@@ -365,21 +365,21 @@ deploy_drive() {
   [[ -n "$ZIP_ID" ]] && package_url="https://drive.google.com/uc?export=download&id=$ZIP_ID"
 
   # Build JSON with PHP to stdout, then write it (tee)
-  echo "[INFO] Building UUPD JSON…"
+echo "[INFO] Building UUPD JSON…"
   local json
   json="$(php -r '
-    $ver = getenv("UUPD_VERSION");
-    $zipId = getenv("UUPD_ZIP_ID");
-    $sha = getenv("UUPD_SHA");
-    $pkg = $zipId ? ("https://drive.google.com/uc?export=download&id=".$zipId) : "";
+    $ver  = $argv[1] ?? "";
+    $zipId= $argv[2] ?? "";
+    $sha  = $argv[3] ?? "";
+    $pkg  = $zipId ? ("https://drive.google.com/uc?export=download&id=".$zipId) : "";
     $m = [
       "version"       => $ver,
-      "drive_file_id" => $zipId ?: "",
+      "drive_file_id" => $zipId,
       "package"       => $pkg,
       "checksum"      => ["algo"=>"sha256","hash"=>$sha],
     ];
     echo json_encode($m, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
-  ' UUPD_VERSION="$version" UUPD_ZIP_ID="$ZIP_ID" UUPD_SHA="$sha256")" || die "PHP JSON build failed"
+  ' -- "$version" "$ZIP_ID" "$sha256")" || die "PHP JSON build failed"
 
   echo "[DEBUG] JSON to write:"
   echo "----------------------"
