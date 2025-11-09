@@ -13,7 +13,7 @@
         "frequently_asked_questions": "",
         "changelog": "<h4>0.9.7 22 August 2025</h4><ul><li>New: First Updater Test (Update)</li><li>New: Notify for Suremail</li></ul><h4>0.9.6 22 August 2025</h4><ul><li>New: Initial Release</li><li>New: First Updater Test</li></ul>"
     },
-    "last_updated": "2025-11-09 00:31:15",
+    "last_updated": "2025-11-09 00:36:39",
     "download_url": "https://github.com/stingray82/notify-for-suremail/releases/latest/download/notify-for-suremail.zip",
     "banners": {
         "low": "https://raw.githubusercontent.com/stingray82/notify-for-suremail/main/uupd/banner-772x250.png",

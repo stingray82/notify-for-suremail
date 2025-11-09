@@ -41,6 +41,8 @@ done < "$config_file"
 HEADER_SCRIPT="${HEADER_SCRIPT:-C:/Ignore By Avast/0. PATHED Items/Plugins/deployscripts/myplugin_headers.php}"
 TOKEN_FILE="${TOKEN_FILE:-C:/Ignore By Avast/0. PATHED Items/Plugins/deployscripts/github_token.txt}"
 GENERATOR_SCRIPT="${GENERATOR_SCRIPT:-C:/Ignore By Avast/0. PATHED Items/Plugins/deployscripts/generate_index.php}"
+GDRIVE_JSON_SCRIPT="${GDRIVE_JSON_SCRIPT:-C:/Ignore By Avast/0. PATHED Items/Plugins/deployscripts/gdrivejson.php}"
+
 
 # =====================================================
 # DEFAULTS / VALIDATION
@@ -433,89 +435,40 @@ deploy_drive() {
 
 echo "[INFO] Building rich UUPD JSON…"
 
-# Prevent MSYS path mangling of arguments (Drive URLs etc.)
+# Prevent MSYS from rewriting paths in our args (Windows quirk)
 export MSYS2_ARG_CONV_EXCL='*'
 
-# Write a temp PHP builder (more robust than php -r on Windows)
-build_php="$(mktemp -t uupd_build_XXXXXX.php)"
+php "$GDRIVE_JSON_SCRIPT" \
+  --version "$version" \
+  --zip-id "$ZIP_ID" \
+  --sha "$sha256" \
+  --slug "$PLUGIN_SLUG" \
+  --name "$disp_name" \
+  --author "$author" \
+  --author-url "$author_home" \
+  --requires-php "$req_php" \
+  --requires "$req_wp" \
+  --tested "$tested_wp" \
+  --last "${UUPD_LAST_UPDATED:-$(date '+%Y-%m-%d %H:%M:%S')}" \
+  --download-url "$dl_url" \
+  --banner-low "$banner_low" \
+  --banner-high "$banner_high" \
+  --icon-1x "$icon_1x" \
+  --icon-2x "$icon_2x" \
+  --desc-file "${UUPD_SECTION_DESCRIPTION_FILE:-}" \
+  --inst-file "${UUPD_SECTION_INSTALLATION_FILE:-}" \
+  --faq-file  "${UUPD_SECTION_FAQ_FILE:-}" \
+  --changelog-file "${UUPD_SECTION_CHANGELOG_HTML_FILE:-}" \
+  --out "$drive_manifest"
 
-cat > "$build_php" <<'PHP'
-<?php
-[$ver,$zipId,$sha,$slug,$name,$author,$authorUrl,$reqPhp,$reqWp,$testedWp,$last,$dl,$bLow,$bHigh,$i1,$i2,$fDesc,$fInst,$fFaq,$fChg] = array_slice($argv,1);
-
-$read = function($p) {
-  if (!$p) return "";
-  $p = str_replace("\\", "/", $p);
-  return is_file($p) ? file_get_contents($p) : "";
-};
-
-$pkg = $zipId ? ("https://drive.google.com/uc?export=download&id=".$zipId) : "";
-
-$sections = [
-  "description" => $read($fDesc),
-  "installation" => $read($fInst),
-  "frequently_asked_questions" => $read($fFaq),
-  "changelog" => $read($fChg),
-];
-foreach ($sections as $k=>$v) { if ($v === "" || $v === null) unset($sections[$k]); }
-
-$out = [
-  "slug" => $slug,
-  "name" => $name,
-  "version" => $ver ?: "",
-  "author" => $author ?: "",
-  "author_homepage" => $authorUrl ?: "",
-  "requires_php" => $reqPhp ?: "",
-  "requires" => $reqWp ?: "",
-  "tested" => $testedWp ?: "",
-  "sections" => (object)$sections,
-  "last_updated" => $last,
-  "download_url" => $dl ?: "",
-  "drive_file_id" => $zipId ?: "",
-  "package" => $pkg,
-  "checksum" => ["algo"=>"sha256","hash"=>$sha],
-  "banners" => ["low"=>$bLow ?: "", "high"=>$bHigh ?: ""],
-  "icons" => ["1x"=>$i1 ?: "", "2x"=>$i2 ?: ""],
-];
-
-$j = json_encode($out, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
-if ($j === false) {
-  fwrite(STDERR, "JSON encode failed: ".json_last_error_msg().PHP_EOL);
-  exit(2);
-}
-echo $j;
-PHP
-
-json="$(php "$build_php" \
-  "$version" "$ZIP_ID" "$sha256" \
-  "$PLUGIN_SLUG" "${UUPD_NAME:-$PLUGIN_NAME}" "${UUPD_AUTHOR:-}" "${UUPD_AUTHOR_HOMEPAGE:-}" \
-  "${UUPD_REQUIRES_PHP:-$requires_php}" "${UUPD_REQUIRES:-$requires_at_least}" "${UUPD_TESTED:-$tested_up_to}" \
-  "${UUPD_LAST_UPDATED:-$(date '+%Y-%m-%d %H:%M:%S')}" \
-  "${UUPD_DOWNLOAD_URL:-${GITHUB_REPO:+https://github.com/$GITHUB_REPO/releases/latest/download/$ZIP_NAME}}" \
-  "${UUPD_BANNER_LOW:-${raw_base:+$raw_base/banner-772x250.png}}" \
-  "${UUPD_BANNER_HIGH:-${raw_base:+$raw_base/banner-1544x500.png}}" \
-  "${UUPD_ICON_1X:-${raw_base:+$raw_base/icon-128.png}}" \
-  "${UUPD_ICON_2X:-${raw_base:+$raw_base/icon-256.png}}" \
-  "${UUPD_SECTION_DESCRIPTION_FILE:-}" \
-  "${UUPD_SECTION_INSTALLATION_FILE:-}" \
-  "${UUPD_SECTION_FAQ_FILE:-}" \
-  "${UUPD_SECTION_CHANGELOG_HTML_FILE:-}" \
-)"; php_status=$?
-
-rm -f "$build_php"
-
-if [[ $php_status -ne 0 || -z "$json" ]]; then
-  echo "[ERROR] PHP JSON build failed (exit=$php_status)"
+php_status=$?
+if [[ $php_status -ne 0 ]]; then
+  echo "[ERROR] gdrivejson.php failed (exit=$php_status)"
   exit 1
 fi
 
-echo "[DEBUG] JSON to write:"
-echo "----------------------"
-echo "$json"
-echo "----------------------"
+echo "[OK] Manifest written: $drive_manifest"
 
-printf "%s" "$json" > "$drive_manifest" || die "Write manifest failed"
-sync || true
 
 
   ok "Drive manifest updated"
