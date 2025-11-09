@@ -5,7 +5,7 @@
  * Tested up to:      6.8.3
  * Requires at least: 6.5
  * Requires PHP:      8.0
- * Version:           0.9.7
+ * Version:           0.9.8
  * Author:            ReallyUsefulPlugins.com
  * Author URI:        https://reallyusefulplugins.com
  * License:           GPL-2.0+
@@ -20,7 +20,7 @@ require_once __DIR__ . '/inc/mainwp-child.php';
 require_once __DIR__ . '/inc/flowmattic.php';
 
 
-define('RUP_NOTIFY_FOR_SUREMAIL_VERSION', '0.9.7');
+define('RUP_NOTIFY_FOR_SUREMAIL_VERSION', '0.9.8');
 
 class Suremail_Notify {
     const OPTION_KEY = 'suremail_notify_options';

@@ -1,7 +1,7 @@
 {
     "slug": "notify-for-suremail",
     "name": "Notify for Suremail",
-    "version": "0.9.7",
+    "version": "0.9.8",
     "author": "ReallyUsefulPlugins.com",
     "author_homepage": "https://reallyusefulplugins.com",
     "requires_php": "8.0",
@@ -11,9 +11,9 @@
         "description": "Sends Pushover, Discord, Generic Webhook and Slack notifications when emails are blocked, fail, or succeed.",
         "installation": "1. Upload the `notify-for-suremail` folder to the `/wp-content/plugins/` directory.<br />\r\n2. Go to a Guttenberg page you will now have a new block.<br />\r\n3. use the configurator to modify the use bubbles embed",
         "frequently_asked_questions": "",
-        "changelog": "<h4>0.9.7 22 August 2025</h4><ul><li>New: First Updater Test (Update)</li><li>New: Notify for Suremail</li></ul><h4>0.9.6 22 August 2025</h4><ul><li>New: Initial Release</li><li>New: First Updater Test</li></ul>"
+        "changelog": "<h4>0.9.8 09 November 2025</h4><ul><li>New: Update Deploy Script</li></ul><h4>0.9.7 22 August 2025</h4><ul><li>New: First Updater Test (Update)</li><li>New: Notify for Suremail</li></ul><h4>0.9.6 22 August 2025</h4><ul><li>New: Initial Release</li><li>New: First Updater Test</li></ul>"
     },
-    "last_updated": "2025-11-09 00:48:32",
+    "last_updated": "2025-11-09 00:53:33",
     "download_url": "https://github.com/stingray82/notify-for-suremail/releases/latest/download/notify-for-suremail.zip",
     "banners": {
         "low": "https://raw.githubusercontent.com/stingray82/notify-for-suremail/main/uupd/banner-772x250.png",
