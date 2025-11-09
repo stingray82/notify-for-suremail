@@ -430,44 +430,50 @@ deploy_drive() {
   local f_chg_html="${UUPD_SECTION_CHANGELOG_HTML_FILE:-}"
 
   # Build JSON with PHP via argv (Windows-safe). PHP will read section files if provided.
-  # ---------- Rich manifest fields (same variables you already set above) ----------
-# ... keep your existing variables here (slug, disp_name, author, req_php, etc.) ...
+  echo "[INFO] Building rich UUPD JSON…"
+  export MSYS2_ARG_CONV_EXCL='*'   # prevent path mangling
 
-echo "[INFO] Building rich UUPD JSON…"
+  # Defaults for banners/icons from your repo’s /uupd folder (optional)
+  gh_user="${GITHUB_REPO%%/*}"; gh_repo="${GITHUB_REPO#*/}"
+  cdn_path=""
+  [[ -n "$gh_user" && -n "$gh_repo" ]] && cdn_path="https://raw.githubusercontent.com/$gh_user/$gh_repo/main/uupd"
 
-# Prevent MSYS from rewriting paths in our args (Windows quirk)
-export MSYS2_ARG_CONV_EXCL='*'
+  # Optional GitHub download_url fallback
+  dl_url="${UUPD_DOWNLOAD_URL:-}"
+  if [[ -z "$dl_url" && -n "${GITHUB_REPO:-}" ]]; then
+    dl_url="https://github.com/$GITHUB_REPO/releases/latest/download/$ZIP_NAME"
+  fi
 
-php "$GDRIVE_JSON_SCRIPT" \
-  --version "$version" \
-  --zip-id "$ZIP_ID" \
-  --sha "$sha256" \
-  --slug "$PLUGIN_SLUG" \
-  --name "$disp_name" \
-  --author "$author" \
-  --author-url "$author_home" \
-  --requires-php "$req_php" \
-  --requires "$req_wp" \
-  --tested "$tested_wp" \
-  --last "${UUPD_LAST_UPDATED:-$(date '+%Y-%m-%d %H:%M:%S')}" \
-  --download-url "$dl_url" \
-  --banner-low "$banner_low" \
-  --banner-high "$banner_high" \
-  --icon-1x "$icon_1x" \
-  --icon-2x "$icon_2x" \
-  --desc-file "${UUPD_SECTION_DESCRIPTION_FILE:-}" \
-  --inst-file "${UUPD_SECTION_INSTALLATION_FILE:-}" \
-  --faq-file  "${UUPD_SECTION_FAQ_FILE:-}" \
-  --changelog-file "${UUPD_SECTION_CHANGELOG_HTML_FILE:-}" \
-  --out "$drive_manifest"
+  php "$GDRIVE_JSON_SCRIPT" \
+    --plugin-file "$plugin_file" \
+    --readme-file "$STATIC_FILE" \
+    --changelog-file "$CHANGELOG_FILE" \
+    --out "$drive_manifest" \
+    --zip-id "$ZIP_ID" \
+    --sha "$sha256" \
+    --slug "$PLUGIN_SLUG" \
+    --cdn "$cdn_path" \
+    --download-url "$dl_url" \
+    ${UUPD_NAME:+--name "$UUPD_NAME"} \
+    ${UUPD_AUTHOR:+--author "$UUPD_AUTHOR"} \
+    ${UUPD_AUTHOR_HOMEPAGE:+--author-url "$UUPD_AUTHOR_HOMEPAGE"} \
+    ${UUPD_REQUIRES_PHP:+--requires-php "$UUPD_REQUIRES_PHP"} \
+    ${UUPD_REQUIRES:+--requires "$UUPD_REQUIRES"} \
+    ${UUPD_TESTED:+--tested "$UUPD_TESTED"} \
+    ${UUPD_LAST_UPDATED:+--last "$UUPD_LAST_UPDATED"} \
+    ${UUPD_BANNER_LOW:+--banner-low "$UUPD_BANNER_LOW"} \
+    ${UUPD_BANNER_HIGH:+--banner-high "$UUPD_BANNER_HIGH"} \
+    ${UUPD_ICON_1X:+--icon-1x "$UUPD_ICON_1X"} \
+    ${UUPD_ICON_2X:+--icon-2x "$UUPD_ICON_2X"}
 
-php_status=$?
-if [[ $php_status -ne 0 ]]; then
-  echo "[ERROR] gdrivejson.php failed (exit=$php_status)"
-  exit 1
-fi
+  php_status=$?
+  if [[ $php_status -ne 0 ]]; then
+    echo "[ERROR] gdrivejson.php failed (exit=$php_status)"
+    exit 1
+  fi
 
-echo "[OK] Manifest written: $drive_manifest"
+  echo "[OK] Manifest written: $drive_manifest"
+
 
 
 
