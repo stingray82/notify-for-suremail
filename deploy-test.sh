@@ -428,63 +428,95 @@ deploy_drive() {
   local f_chg_html="${UUPD_SECTION_CHANGELOG_HTML_FILE:-}"
 
   # Build JSON with PHP via argv (Windows-safe). PHP will read section files if provided.
-  echo "[INFO] Building rich UUPD JSON…"
-  local json
-  json="$(php -r '
-    [$ver,$zipId,$sha,$slug,$name,$author,$authorUrl,$reqPhp,$reqWp,$testedWp,$last,$dl,$bLow,$bHigh,$i1,$i2,$fDesc,$fInst,$fFaq,$fChg] = array_slice($argv,1);
+  # ---------- Rich manifest fields (same variables you already set above) ----------
+# ... keep your existing variables here (slug, disp_name, author, req_php, etc.) ...
 
-    $read = function($p) {
-      if (!$p) return "";
-      $p = str_replace("\\\\","/",$p);
-      return is_file($p) ? file_get_contents($p) : "";
-    };
+echo "[INFO] Building rich UUPD JSON…"
 
-    $pkg = $zipId ? ("https://drive.google.com/uc?export=download&id=".$zipId) : "";
+# Prevent MSYS path mangling of arguments (Drive URLs etc.)
+export MSYS2_ARG_CONV_EXCL='*'
 
-    $sections = [
-      "description" => $read($fDesc),
-      "installation" => $read($fInst),
-      "frequently_asked_questions" => $read($fFaq),
-      "changelog" => $read($fChg),
-    ];
-    foreach ($sections as $k=>$v) { if ($v === "" || $v === null) unset($sections[$k]); }
+# Write a temp PHP builder (more robust than php -r on Windows)
+build_php="$(mktemp -t uupd_build_XXXXXX.php)"
 
-    $out = [
-      "slug" => $slug,
-      "name" => $name,
-      "version" => $ver ?: "",
-      "author" => $author ?: "",
-      "author_homepage" => $authorUrl ?: "",
-      "requires_php" => $reqPhp ?: "",
-      "requires" => $reqWp ?: "",
-      "tested" => $testedWp ?: "",
-      "sections" => (object)$sections,
-      "last_updated" => $last,
-      "download_url" => $dl ?: "",
-      "drive_file_id" => $zipId ?: "",
-      "package" => $pkg,
-      "checksum" => ["algo"=>"sha256","hash"=>$sha],
-      "banners" => ["low"=>$bLow ?: "", "high"=>$bHigh ?: ""],
-      "icons" => ["1x"=>$i1 ?: "", "2x"=>$i2 ?: ""],
-    ];
+cat > "$build_php" <<'PHP'
+<?php
+[$ver,$zipId,$sha,$slug,$name,$author,$authorUrl,$reqPhp,$reqWp,$testedWp,$last,$dl,$bLow,$bHigh,$i1,$i2,$fDesc,$fInst,$fFaq,$fChg] = array_slice($argv,1);
 
-    echo json_encode($out, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
-  ' -- \
-    "$version" "$ZIP_ID" "$sha256" \
-    "$slug" "$disp_name" "$author" "$author_home" \
-    "$req_php" "$req_wp" "$tested_wp" \
-    "$last_updated" "$dl_url" \
-    "$banner_low" "$banner_high" "$icon_1x" "$icon_2x" \
-    "$f_desc" "$f_inst" "$f_faq" "$f_chg_html"
-  )" || die "PHP JSON build failed"
+$read = function($p) {
+  if (!$p) return "";
+  $p = str_replace("\\", "/", $p);
+  return is_file($p) ? file_get_contents($p) : "";
+};
 
-  echo "[DEBUG] JSON to write:"
-  echo "----------------------"
-  echo "$json"
-  echo "----------------------"
+$pkg = $zipId ? ("https://drive.google.com/uc?export=download&id=".$zipId) : "";
 
-  printf "%s" "$json" > "$drive_manifest" || die "Write manifest failed"
-  sync || true
+$sections = [
+  "description" => $read($fDesc),
+  "installation" => $read($fInst),
+  "frequently_asked_questions" => $read($fFaq),
+  "changelog" => $read($fChg),
+];
+foreach ($sections as $k=>$v) { if ($v === "" || $v === null) unset($sections[$k]); }
+
+$out = [
+  "slug" => $slug,
+  "name" => $name,
+  "version" => $ver ?: "",
+  "author" => $author ?: "",
+  "author_homepage" => $authorUrl ?: "",
+  "requires_php" => $reqPhp ?: "",
+  "requires" => $reqWp ?: "",
+  "tested" => $testedWp ?: "",
+  "sections" => (object)$sections,
+  "last_updated" => $last,
+  "download_url" => $dl ?: "",
+  "drive_file_id" => $zipId ?: "",
+  "package" => $pkg,
+  "checksum" => ["algo"=>"sha256","hash"=>$sha],
+  "banners" => ["low"=>$bLow ?: "", "high"=>$bHigh ?: ""],
+  "icons" => ["1x"=>$i1 ?: "", "2x"=>$i2 ?: ""],
+];
+
+$j = json_encode($out, JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES);
+if ($j === false) {
+  fwrite(STDERR, "JSON encode failed: ".json_last_error_msg().PHP_EOL);
+  exit(2);
+}
+echo $j;
+PHP
+
+json="$(php "$build_php" \
+  "$version" "$ZIP_ID" "$sha256" \
+  "$PLUGIN_SLUG" "${UUPD_NAME:-$PLUGIN_NAME}" "${UUPD_AUTHOR:-}" "${UUPD_AUTHOR_HOMEPAGE:-}" \
+  "${UUPD_REQUIRES_PHP:-$requires_php}" "${UUPD_REQUIRES:-$requires_at_least}" "${UUPD_TESTED:-$tested_up_to}" \
+  "${UUPD_LAST_UPDATED:-$(date '+%Y-%m-%d %H:%M:%S')}" \
+  "${UUPD_DOWNLOAD_URL:-${GITHUB_REPO:+https://github.com/$GITHUB_REPO/releases/latest/download/$ZIP_NAME}}" \
+  "${UUPD_BANNER_LOW:-${raw_base:+$raw_base/banner-772x250.png}}" \
+  "${UUPD_BANNER_HIGH:-${raw_base:+$raw_base/banner-1544x500.png}}" \
+  "${UUPD_ICON_1X:-${raw_base:+$raw_base/icon-128.png}}" \
+  "${UUPD_ICON_2X:-${raw_base:+$raw_base/icon-256.png}}" \
+  "${UUPD_SECTION_DESCRIPTION_FILE:-}" \
+  "${UUPD_SECTION_INSTALLATION_FILE:-}" \
+  "${UUPD_SECTION_FAQ_FILE:-}" \
+  "${UUPD_SECTION_CHANGELOG_HTML_FILE:-}" \
+)"; php_status=$?
+
+rm -f "$build_php"
+
+if [[ $php_status -ne 0 || -z "$json" ]]; then
+  echo "[ERROR] PHP JSON build failed (exit=$php_status)"
+  exit 1
+fi
+
+echo "[DEBUG] JSON to write:"
+echo "----------------------"
+echo "$json"
+echo "----------------------"
+
+printf "%s" "$json" > "$drive_manifest" || die "Write manifest failed"
+sync || true
+
 
   ok "Drive manifest updated"
   if [[ -n "$MANIFEST_ID" ]]; then
