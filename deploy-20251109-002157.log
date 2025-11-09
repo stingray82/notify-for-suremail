@@ -1,0 +1,1147 @@
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:26](1762647717.201625) echo '[INFO] Logging to: /c/Users/Nathan/Git/Plugins/Free Plugins/suremail-notify/deploy-20251109-002157.log'
+[INFO] Logging to: /c/Users/Nathan/Git/Plugins/Free Plugins/suremail-notify/deploy-20251109-002157.log
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:27](1762647717.201694) echo '[INFO] Bash: 5.2.37(1)-release'
+[INFO] Bash: 5.2.37(1)-release
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:28](1762647717.201736) echo '[INFO] PWD : /c/Users/Nathan/Git/Plugins/Free Plugins/suremail-notify'
+[INFO] PWD : /c/Users/Nathan/Git/Plugins/Free Plugins/suremail-notify
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:29](1762647717.201792) echo '[INFO] PATH: /c/Users/Nathan/bin:/mingw64/bin:/usr/local/bin:/usr/bin:/bin:/mingw64/bin:/usr/bin:/c/Users/Nathan/bin:/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/Program Files (x86)/VMware/VMware Workstation/bin:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/c/Program Files/dotnet:/c/Program Files/PuTTY:/c/Program Files/Pandoc:/c/Program Files/TortoiseSVN/bin:/c/Program Files/GitHub CLI:/c/Program Files (x86)/Pandoc:/cmd:/c/ProgramData/ComposerSetup/bin:/c/laragon/bin/composer:/c/laragon/bin/git/bin:/c/laragon/bin/git/cmd:/c/laragon/bin/git/mingw64/bin:/c/laragon/bin/git/usr/bin:/c/laragon/bin/mysql/mysql-8.4.3-winx64/bin:/c/laragon/bin/ngrok:/c/laragon/bin/nodejs/node-v22:/c/laragon/bin/php/php-8.3.16-Win32-vs16-x64:/c/laragon/bin/python/python-3.13:/c/laragon/bin/python/python-3.13/Scripts:/c/laragon/usr/bin:/c/Users/Nathan/AppData/Local/Yarn/config/global/node_modules/.bin:/c/Users/Nathan/AppData/Roaming/Composer/vendor/bin:/c/Users/Nathan/AppData/Roaming/npm:/c/Ignore By Avast/0. PATHED Items:/c/Users/Nathan/AppData/Local/Microsoft/WindowsApps:/c/Users/Nathan/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/Nathan/AppData/Local/GitHubDesktop/bin:/c/laragon:/c/Users/Nathan/AppData/Local/studio/bin:/usr/bin/vendor_perl:/usr/bin/core_perl'
+[INFO] PATH: /c/Users/Nathan/bin:/mingw64/bin:/usr/local/bin:/usr/bin:/bin:/mingw64/bin:/usr/bin:/c/Users/Nathan/bin:/c/Program Files (x86)/Common Files/Oracle/Java/java8path:/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/Program Files (x86)/VMware/VMware Workstation/bin:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/System32/Wbem:/c/WINDOWS/System32/WindowsPowerShell/v1.0:/c/WINDOWS/System32/OpenSSH:/c/Program Files/dotnet:/c/Program Files/PuTTY:/c/Program Files/Pandoc:/c/Program Files/TortoiseSVN/bin:/c/Program Files/GitHub CLI:/c/Program Files (x86)/Pandoc:/cmd:/c/ProgramData/ComposerSetup/bin:/c/laragon/bin/composer:/c/laragon/bin/git/bin:/c/laragon/bin/git/cmd:/c/laragon/bin/git/mingw64/bin:/c/laragon/bin/git/usr/bin:/c/laragon/bin/mysql/mysql-8.4.3-winx64/bin:/c/laragon/bin/ngrok:/c/laragon/bin/nodejs/node-v22:/c/laragon/bin/php/php-8.3.16-Win32-vs16-x64:/c/laragon/bin/python/python-3.13:/c/laragon/bin/python/python-3.13/Scripts:/c/laragon/usr/bin:/c/Users/Nathan/AppData/Local/Yarn/config/global/node_modules/.bin:/c/Users/Nathan/AppData/Roaming/Composer/vendor/bin:/c/Users/Nathan/AppData/Roaming/npm:/c/Ignore By Avast/0. PATHED Items:/c/Users/Nathan/AppData/Local/Microsoft/WindowsApps:/c/Users/Nathan/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/Nathan/AppData/Local/GitHubDesktop/bin:/c/laragon:/c/Users/Nathan/AppData/Local/studio/bin:/usr/bin/vendor_perl:/usr/bin/core_perl
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:35](1762647717.201903) : /tmp
++++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:40](1762647717.227039) dirname -- 'C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:40](1762647717.254402) cd -- 'C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:40](1762647717.255027) pwd -P
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:40](1762647717.256131) script_dir='/c/Users/Nathan/Git/Plugins/Free Plugins/suremail-notify'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:41](1762647717.256203) config_file='/c/Users/Nathan/Git/Plugins/Free Plugins/suremail-notify/deploy-test.cfg'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:46](1762647717.256258) [[ ! -f /c/Users/Nathan/Git/Plugins/Free Plugins/suremail-notify/deploy-test.cfg ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:52](1762647717.256554) unset PLUGIN_NAME PLUGIN_TAGS PLUGIN_SLUG HEADER_SCRIPT CHANGELOG_FILE STATIC_FILE ZIP_NAME GENERATOR_SCRIPT
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:53](1762647717.256616) unset GITHUB_REPO TOKEN_FILE GITHUB_TOKEN DEST_DIR DEPLOY_TARGET DEPLOY_TARGETS
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:54](1762647717.256663) unset LOCAL_DEST_DIR GITHUB_OWNER GITHUB_TAG_PREFIX GITHUB_RELEASE_PRERELEASE
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:55](1762647717.256708) unset GDRIVE_SYNC_DIR GDRIVE_ZIP_NAME GDRIVE_MANIFEST_NAME GDRIVE_ZIP_FILE_ID GDRIVE_MANIFEST_FILE_ID
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.256933) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.256956) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.257050) line='; ========================='
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.257075) [[ -z ; ========================= ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.257103) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.257127) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.257149) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.257175) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.257193) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.257245) line='; Project basics'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.257268) [[ -z ; Project basics ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.257291) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.257313) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.257334) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.257357) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.257375) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.257438) line='; ========================='
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.257459) [[ -z ; ========================= ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.257482) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.257502) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.257522) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.257544) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.257561) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.257629) line='PLUGIN_NAME=Notify for SureMail'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.257650) [[ -z PLUGIN_NAME=Notify for SureMail ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.257670) [[ P == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.257689) [[ P == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647717.257714) key=PLUGIN_NAME
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647717.257740) val='Notify for SureMail'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.282133) echo PLUGIN_NAME
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.292128) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.313339) key=PLUGIN_NAME
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.334699) echo 'Notify for SureMail'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.342914) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.358684) val='Notify for SureMail'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647717.358734) eval 'PLUGIN_NAME="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647717.358773) PLUGIN_NAME='Notify for SureMail'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.358807) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.358834) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.358955) line='PLUGIN_TAGS=SureMail, Discord, Pushover, Slack, Webhook'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.358980) [[ -z PLUGIN_TAGS=SureMail, Discord, Pushover, Slack, Webhook ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.359007) [[ P == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.359037) [[ P == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647717.359077) key=PLUGIN_TAGS
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647717.359105) val='SureMail, Discord, Pushover, Slack, Webhook'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.379011) echo PLUGIN_TAGS
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.389505) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.406174) key=PLUGIN_TAGS
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.427955) echo 'SureMail, Discord, Pushover, Slack, Webhook'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.438874) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.452679) val='SureMail, Discord, Pushover, Slack, Webhook'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647717.452763) eval 'PLUGIN_TAGS="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647717.452947) PLUGIN_TAGS='SureMail, Discord, Pushover, Slack, Webhook'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.453140) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.453187) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.453369) line=PLUGIN_SLUG=notify-for-suremail
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.453414) [[ -z PLUGIN_SLUG=notify-for-suremail ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.453452) [[ P == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.453480) [[ P == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647717.453514) key=PLUGIN_SLUG
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647717.453548) val=notify-for-suremail
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.480355) echo PLUGIN_SLUG
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.492513) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.515297) key=PLUGIN_SLUG
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.538898) echo notify-for-suremail
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.549150) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.577157) val=notify-for-suremail
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647717.577215) eval 'PLUGIN_SLUG="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647717.577262) PLUGIN_SLUG=notify-for-suremail
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.577315) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.577342) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.577418) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.577458) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.577485) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.577517) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.577539) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.577677) line='; Your GitHub repo (owner/repo)'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.577730) [[ -z ; Your GitHub repo (owner/repo) ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.577787) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.577831) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.577864) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.577907) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.577939) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.578109) line=GITHUB_REPO=stingray82/notify-for-suremail
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.578150) [[ -z GITHUB_REPO=stingray82/notify-for-suremail ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.578193) [[ G == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.578237) [[ G == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647717.578284) key=GITHUB_REPO
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647717.578333) val=stingray82/notify-for-suremail
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.598829) echo GITHUB_REPO
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.608744) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.622835) key=GITHUB_REPO
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.645974) echo stingray82/notify-for-suremail
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.654757) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.669429) val=stingray82/notify-for-suremail
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647717.669476) eval 'GITHUB_REPO="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647717.669512) GITHUB_REPO=stingray82/notify-for-suremail
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.669544) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.669563) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.669610) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.669633) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.669655) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.669681) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.669698) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.669751) line='; Output ZIP name'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.669773) [[ -z ; Output ZIP name ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.669799) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.669822) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.669842) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.669864) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.669881) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.669951) line=ZIP_NAME=notify-for-suremail.zip
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.669973) [[ -z ZIP_NAME=notify-for-suremail.zip ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.669994) [[ Z == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.670015) [[ Z == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647717.670041) key=ZIP_NAME
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647717.670067) val=notify-for-suremail.zip
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.689426) echo ZIP_NAME
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.698454) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.715792) key=ZIP_NAME
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.734521) echo notify-for-suremail.zip
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.743114) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.753971) val=notify-for-suremail.zip
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647717.754017) eval 'ZIP_NAME="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647717.754054) ZIP_NAME=notify-for-suremail.zip
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.754088) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.754107) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.754155) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.754177) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.754199) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.754228) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.754244) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.754368) line='; Legacy single target (kept for compatibility). If set, it will be used'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.754391) [[ -z ; Legacy single target (kept for compatibility). If set, it will be used ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.754417) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.754440) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.754459) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.754482) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.754499) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.754606) line='; when DEPLOY_TARGETS is empty. Options: github, local, drive'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.754628) [[ -z ; when DEPLOY_TARGETS is empty. Options: github, local, drive ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.754648) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.754668) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.754686) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.754708) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.754725) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.754771) line=DEPLOY_TARGET=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.754793) [[ -z DEPLOY_TARGET= ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.754814) [[ D == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.754835) [[ D == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647717.754860) key=DEPLOY_TARGET
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647717.754886) val=
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.771469) echo DEPLOY_TARGET
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.780127) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.793530) key=DEPLOY_TARGET
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.810956) echo ''
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.818828) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.832211) val=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647717.832260) eval 'DEPLOY_TARGET="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647717.832295) DEPLOY_TARGET=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.832324) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.832340) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.832390) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.832414) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.832435) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.832462) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.832482) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.832599) line='; NEW multi-target list (comma-separated): local,github,drive'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.832622) [[ -z ; NEW multi-target list (comma-separated): local,github,drive ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.832652) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.832676) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.832697) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.832720) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.832738) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.832816) line='; Example: DEPLOY_TARGETS=github,drive'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.832837) [[ -z ; Example: DEPLOY_TARGETS=github,drive ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.832858) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.832880) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.832900) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.832923) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.832939) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.833046) line='; If empty, we fall back to DEPLOY_TARGET (above) or "github".'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.833067) [[ -z ; If empty, we fall back to DEPLOY_TARGET (above) or "github". ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.833088) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.833110) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.833127) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.833151) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.833168) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.833221) line=DEPLOY_TARGETS=drive
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.833242) [[ -z DEPLOY_TARGETS=drive ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.833262) [[ D == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.833282) [[ D == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647717.833306) key=DEPLOY_TARGETS
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647717.833331) val=drive
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.850591) echo DEPLOY_TARGETS
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.858745) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.870593) key=DEPLOY_TARGETS
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.889345) echo drive
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.898163) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.909361) val=drive
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647717.909414) eval 'DEPLOY_TARGETS="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647717.909456) DEPLOY_TARGETS=drive
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.909491) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.909512) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.909567) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.909593) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.909618) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.909650) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.909671) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.909790) line='; Files used to build readme & release body'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.909820) [[ -z ; Files used to build readme & release body ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.909853) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.909883) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.909911) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.909940) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.909963) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.910120) line='CHANGELOG_FILE=C:\Users\Nathan\Git\rup-changelogs\notify-for-suremail.txt'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.910150) [[ -z CHANGELOG_FILE=C:\Users\Nathan\Git\rup-changelogs\notify-for-suremail.txt ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.910183) [[ C == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.910209) [[ C == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647717.910242) key=CHANGELOG_FILE
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647717.910276) val='C:\Users\Nathan\Git\rup-changelogs\notify-for-suremail.txt'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.930200) echo CHANGELOG_FILE
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.937757) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647717.948246) key=CHANGELOG_FILE
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.963573) echo 'C:\Users\Nathan\Git\rup-changelogs\notify-for-suremail.txt'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.970736) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647717.996411) val='C:\Users\Nathan\Git\rup-changelogs\notify-for-suremail.txt'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647717.996502) eval 'CHANGELOG_FILE="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647717.996566) CHANGELOG_FILE='C:\Users\Nathan\Git\rup-changelogs\notify-for-suremail.txt'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.996607) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647717.996628) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647717.996715) line=STATIC_FILE=static.txt
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.996743) [[ -z STATIC_FILE=static.txt ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.996774) [[ S == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647717.996801) [[ S == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647717.996830) key=STATIC_FILE
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647717.996860) val=static.txt
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.014863) echo STATIC_FILE
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.022635) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.043128) key=STATIC_FILE
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.061766) echo static.txt
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.071079) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.082484) val=static.txt
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647718.082536) eval 'STATIC_FILE="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647718.082576) STATIC_FILE=static.txt
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.082612) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.082633) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.082686) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.082712) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.082735) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.082762) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.082781) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.082854) line='; ========================='
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.082879) [[ -z ; ========================= ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.082908) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.082936) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.082957) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.082981) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.082998) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.083093) line='; LOCAL target (private folder / NAS / staging)'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.083117) [[ -z ; LOCAL target (private folder / NAS / staging) ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.083141) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.083163) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.083183) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.083207) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.083224) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.083350) line='; Only used if "local" is in DEPLOY_TARGETS (or DEPLOY_TARGET=local)'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.083375) [[ -z ; Only used if "local" is in DEPLOY_TARGETS (or DEPLOY_TARGET=local) ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.083399) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.083420) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.083439) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.083462) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.083479) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.083542) line='; ========================='
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.083565) [[ -z ; ========================= ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.083586) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.083608) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.083628) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.083650) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.083678) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.083828) line='; Legacy DEST_DIR kept for compatibility. If LOCAL_DEST_DIR is empty, the script uses DEST_DIR.'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.083853) [[ -z ; Legacy DEST_DIR kept for compatibility. If LOCAL_DEST_DIR is empty, the script uses DEST_DIR. ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.083876) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.083899) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.083920) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.083942) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.083959) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.083998) line=DEST_DIR=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.084019) [[ -z DEST_DIR= ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.084039) [[ D == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.084061) [[ D == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647718.084086) key=DEST_DIR
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647718.084109) val=
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.100962) echo DEST_DIR
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.108845) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.134210) key=DEST_DIR
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.153175) echo ''
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.161305) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.172983) val=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647718.173026) eval 'DEST_DIR="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647718.173062) DEST_DIR=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.173091) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.173108) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.173171) line=LOCAL_DEST_DIR=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.173193) [[ -z LOCAL_DEST_DIR= ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.173218) [[ L == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.173239) [[ L == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647718.173264) key=LOCAL_DEST_DIR
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647718.173288) val=
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.191340) echo LOCAL_DEST_DIR
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.199150) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.212011) key=LOCAL_DEST_DIR
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.229665) echo ''
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.239508) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.250743) val=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647718.250795) eval 'LOCAL_DEST_DIR="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647718.250844) LOCAL_DEST_DIR=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.250883) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.250900) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.250948) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.250972) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.250995) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.251022) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.251040) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.251107) line='; ========================='
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.251130) [[ -z ; ========================= ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.251156) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.251180) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.251199) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.251223) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.251241) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.251290) line='; GITHUB target'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.251311) [[ -z ; GITHUB target ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.251333) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.251356) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.251374) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.251395) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.251411) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.251537) line='; Only used if "github" is in DEPLOY_TARGETS (or DEPLOY_TARGET=github)'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.251570) [[ -z ; Only used if "github" is in DEPLOY_TARGETS (or DEPLOY_TARGET=github) ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.251600) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.251629) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.251651) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.251674) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.251689) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.251749) line='; ========================='
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.251775) [[ -z ; ========================= ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.251803) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.251831) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.251874) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.251904) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.251927) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.252045) line='; Optional: read token from this file if env var GITHUB_TOKEN isn'\''t set'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.252073) [[ -z ; Optional: read token from this file if env var GITHUB_TOKEN isn't set ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.252104) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.252134) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.252160) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.252191) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.252213) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.252347) line='TOKEN_FILE=C:/Ignore By Avast/0. PATHED Items/Plugins/deployscripts/github_token.txt'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.252376) [[ -z TOKEN_FILE=C:/Ignore By Avast/0. PATHED Items/Plugins/deployscripts/github_token.txt ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.252407) [[ T == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.252435) [[ T == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647718.252471) key=TOKEN_FILE
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647718.252505) val='C:/Ignore By Avast/0. PATHED Items/Plugins/deployscripts/github_token.txt'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.268384) echo TOKEN_FILE
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.277104) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.289899) key=TOKEN_FILE
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.306639) echo 'C:/Ignore By Avast/0. PATHED Items/Plugins/deployscripts/github_token.txt'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.314127) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.336224) val='C:/Ignore By Avast/0. PATHED Items/Plugins/deployscripts/github_token.txt'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647718.336288) eval 'TOKEN_FILE="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647718.336346) TOKEN_FILE='C:/Ignore By Avast/0. PATHED Items/Plugins/deployscripts/github_token.txt'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.336398) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.336440) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.336515) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.336574) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.336619) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.336673) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.336712) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.337064) line='; Optional: tag prefix (final tag becomes <prefix>v<version>; leave empty or set to "v")'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.337117) [[ -z ; Optional: tag prefix (final tag becomes <prefix>v<version>; leave empty or set to "v") ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.337171) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.337224) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.337270) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.337320) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.337356) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.337471) line=GITHUB_TAG_PREFIX=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.337513) [[ -z GITHUB_TAG_PREFIX= ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.337557) [[ G == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.337586) [[ G == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647718.337620) key=GITHUB_TAG_PREFIX
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647718.337654) val=
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.354470) echo GITHUB_TAG_PREFIX
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.362175) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.384095) key=GITHUB_TAG_PREFIX
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.401179) echo ''
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.411560) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.422950) val=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647718.423003) eval 'GITHUB_TAG_PREFIX="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647718.423039) GITHUB_TAG_PREFIX=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.423069) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.423087) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.423133) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.423155) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.423176) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.423199) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.423216) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.423316) line='; Optional: set to 1 to mark the release as a prerelease'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.423344) [[ -z ; Optional: set to 1 to mark the release as a prerelease ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.423376) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.423404) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.423424) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.423447) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.423463) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.423525) line=GITHUB_RELEASE_PRERELEASE=0
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.423545) [[ -z GITHUB_RELEASE_PRERELEASE=0 ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.423566) [[ G == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.423587) [[ G == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647718.423612) key=GITHUB_RELEASE_PRERELEASE
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647718.423639) val=0
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.442353) echo GITHUB_RELEASE_PRERELEASE
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.449873) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.477124) key=GITHUB_RELEASE_PRERELEASE
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.495538) echo 0
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.503112) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.522521) val=0
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647718.522590) eval 'GITHUB_RELEASE_PRERELEASE="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647718.522640) GITHUB_RELEASE_PRERELEASE=0
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.522687) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.522709) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.522773) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.522820) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.522855) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.522889) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.522912) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.523001) line='; ========================='
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.523030) [[ -z ; ========================= ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.523066) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.523096) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.523123) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.523155) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.523182) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.523257) line='; DRIVE (UUPD) target'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.523285) [[ -z ; DRIVE (UUPD) target ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.523316) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.523346) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.523372) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.523401) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.523423) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.523576) line='; Only used if "drive" is in DEPLOY_TARGETS (or DEPLOY_TARGET=drive)'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.523605) [[ -z ; Only used if "drive" is in DEPLOY_TARGETS (or DEPLOY_TARGET=drive) ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.523637) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.523663) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.523688) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.523717) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.523738) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.523819) line='; ========================='
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.523851) [[ -z ; ========================= ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.523880) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.523906) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.523932) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.523964) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.523983) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.524125) line='; Local path to your Google Drive *synced* folder for this plugin'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.524154) [[ -z ; Local path to your Google Drive *synced* folder for this plugin ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.524181) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.524209) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.524234) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.524262) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.524283) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.524373) line='GDRIVE_SYNC_DIR=G:/My Drive/trial'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.524406) [[ -z GDRIVE_SYNC_DIR=G:/My Drive/trial ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.524433) [[ G == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.524457) [[ G == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647718.524488) key=GDRIVE_SYNC_DIR
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647718.524518) val='G:/My Drive/trial'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.545562) echo GDRIVE_SYNC_DIR
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.554494) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.566276) key=GDRIVE_SYNC_DIR
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.584370) echo 'G:/My Drive/trial'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.593455) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.612666) val='G:/My Drive/trial'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647718.612720) eval 'GDRIVE_SYNC_DIR="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647718.612767) GDRIVE_SYNC_DIR='G:/My Drive/trial'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.612801) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.612819) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.612867) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.612889) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.612909) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.612930) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.612946) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.613067) line='; The EXACT two filenames inside that folder (keep constant for stable file IDs)'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.613087) [[ -z ; The EXACT two filenames inside that folder (keep constant for stable file IDs) ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.613110) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.613129) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.613145) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.613165) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.613178) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.613248) line=GDRIVE_ZIP_NAME=notify-for-suremail.zip
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.613268) [[ -z GDRIVE_ZIP_NAME=notify-for-suremail.zip ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.613288) [[ G == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.613308) [[ G == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647718.613331) key=GDRIVE_ZIP_NAME
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647718.613355) val=notify-for-suremail.zip
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.632467) echo GDRIVE_ZIP_NAME
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.643044) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.659620) key=GDRIVE_ZIP_NAME
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.677022) echo notify-for-suremail.zip
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.684731) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.705543) val=notify-for-suremail.zip
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647718.705607) eval 'GDRIVE_ZIP_NAME="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647718.705679) GDRIVE_ZIP_NAME=notify-for-suremail.zip
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.705741) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.705778) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.706011) line=GDRIVE_MANIFEST_NAME=notify-for-suremail-update-info.json
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.706057) [[ -z GDRIVE_MANIFEST_NAME=notify-for-suremail-update-info.json ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.706100) [[ G == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.706134) [[ G == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647718.706175) key=GDRIVE_MANIFEST_NAME
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647718.706219) val=notify-for-suremail-update-info.json
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.724725) echo GDRIVE_MANIFEST_NAME
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.733150) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.750099) key=GDRIVE_MANIFEST_NAME
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.769215) echo notify-for-suremail-update-info.json
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.778511) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.797420) val=notify-for-suremail-update-info.json
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647718.797471) eval 'GDRIVE_MANIFEST_NAME="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647718.797506) GDRIVE_MANIFEST_NAME=notify-for-suremail-update-info.json
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.797537) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.797554) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.797604) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.797626) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.797647) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.797671) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.797688) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.797768) line='; One-time: get these from Drive web UI:'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.797794) [[ -z ; One-time: get these from Drive web UI: ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.797821) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.797843) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.797860) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.797883) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.797897) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.798039) line=';   Right-click file -> Get link -> open the /file/d/<ID>/view URL -> copy the <ID>'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.798061) [[ -z ;   Right-click file -> Get link -> open the /file/d/<ID>/view URL -> copy the <ID> ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.798084) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.798105) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.798123) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.798147) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.798163) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.798299) line='; IMPORTANT: Keep filenames fixed and overwrite content so IDs (and URLs) never change.'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.798321) [[ -z ; IMPORTANT: Keep filenames fixed and overwrite content so IDs (and URLs) never change. ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.798343) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.798364) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.798384) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.798405) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.798421) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.798507) line=GDRIVE_ZIP_FILE_ID=1khTJmtyjB0YLEpnKC914abAX9i2cUJWk
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.798527) [[ -z GDRIVE_ZIP_FILE_ID=1khTJmtyjB0YLEpnKC914abAX9i2cUJWk ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.798552) [[ G == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.798570) [[ G == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647718.798595) key=GDRIVE_ZIP_FILE_ID
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647718.798619) val=1khTJmtyjB0YLEpnKC914abAX9i2cUJWk
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.816174) echo GDRIVE_ZIP_FILE_ID
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.823350) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.843991) key=GDRIVE_ZIP_FILE_ID
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.860425) echo 1khTJmtyjB0YLEpnKC914abAX9i2cUJWk
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.868366) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.894164) val=1khTJmtyjB0YLEpnKC914abAX9i2cUJWk
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647718.894274) eval 'GDRIVE_ZIP_FILE_ID="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647718.894350) GDRIVE_ZIP_FILE_ID=1khTJmtyjB0YLEpnKC914abAX9i2cUJWk
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.894417) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.894476) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.894800) line=GDRIVE_MANIFEST_FILE_ID=1rBno_y2EjgBgnJwtXeF9pNsl0In-KvaR
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.894850) [[ -z GDRIVE_MANIFEST_FILE_ID=1rBno_y2EjgBgnJwtXeF9pNsl0In-KvaR ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.894902) [[ G == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.894941) [[ G == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647718.894985) key=GDRIVE_MANIFEST_FILE_ID
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647718.895029) val=1rBno_y2EjgBgnJwtXeF9pNsl0In-KvaR
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.919934) echo GDRIVE_MANIFEST_FILE_ID
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.928811) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647718.941198) key=GDRIVE_MANIFEST_FILE_ID
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.962371) echo 1rBno_y2EjgBgnJwtXeF9pNsl0In-KvaR
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.972574) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647718.999084) val=1rBno_y2EjgBgnJwtXeF9pNsl0In-KvaR
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647718.999141) eval 'GDRIVE_MANIFEST_FILE_ID="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647718.999184) GDRIVE_MANIFEST_FILE_ID=1rBno_y2EjgBgnJwtXeF9pNsl0In-KvaR
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.999218) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.999240) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.999296) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.999322) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.999354) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.999384) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.999404) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.999500) line='; ======= Drive bootstrap options ======='
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.999524) [[ -z ; ======= Drive bootstrap options ======= ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.999548) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.999572) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.999592) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.999615) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.999632) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647718.999766) line='; Allow the script to proceed and write the manifest even if the ZIP ID is missing.'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.999788) [[ -z ; Allow the script to proceed and write the manifest even if the ZIP ID is missing. ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.999812) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.999832) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647718.999852) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.999874) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647718.999892) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.000034) line='; Default 0 = safer (won’t publish a broken manifest). Set 1 for a soft bootstrap.'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.000058) [[ -z ; Default 0 = safer (won’t publish a broken manifest). Set 1 for a soft bootstrap. ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.000081) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.000105) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.000123) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.000148) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.000166) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.000223) line=ALLOW_EMPTY_DRIVE_ID=0
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.000245) [[ -z ALLOW_EMPTY_DRIVE_ID=0 ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.000266) [[ A == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.000287) [[ A == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647719.000314) key=ALLOW_EMPTY_DRIVE_ID
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647719.000340) val=0
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.020442) echo ALLOW_EMPTY_DRIVE_ID
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.030063) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.046272) key=ALLOW_EMPTY_DRIVE_ID
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.066682) echo 0
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.075567) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.090260) val=0
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647719.090311) eval 'ALLOW_EMPTY_DRIVE_ID="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647719.090351) ALLOW_EMPTY_DRIVE_ID=0
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.090383) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.090403) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.090458) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.090483) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.090507) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.090531) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.090549) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.090736) line='; If 1, the script opens the synced folder in Explorer on first-run/missing-IDs to help you right-click -> View in web.'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.090760) [[ -z ; If 1, the script opens the synced folder in Explorer on first-run/missing-IDs to help you right-click -> View in web. ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.090788) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.090813) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.090834) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.090862) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.090881) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.090936) line=AUTO_OPEN_EXPLORER=1
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.090959) [[ -z AUTO_OPEN_EXPLORER=1 ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.090980) [[ A == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.091002) [[ A == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647719.091029) key=AUTO_OPEN_EXPLORER
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647719.091056) val=1
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.110793) echo AUTO_OPEN_EXPLORER
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.119873) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.136826) key=AUTO_OPEN_EXPLORER
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.157485) echo 1
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.167067) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.183738) val=1
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647719.183885) eval 'AUTO_OPEN_EXPLORER="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647719.183950) AUTO_OPEN_EXPLORER=1
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.183993) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.184016) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.184083) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.184115) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.184143) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.184180) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.184203) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.184472) line='; You may paste either a raw file ID or a full Google Drive URL here. The script extracts the ID automatically.'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.184513) [[ -z ; You may paste either a raw file ID or a full Google Drive URL here. The script extracts the ID automatically. ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.184549) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.184575) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.184600) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.184634) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.184658) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.184861) line='; e.g. GDRIVE_ZIP_FILE_ID=https://drive.google.com/file/d/1AbCdEF.../view?usp=sharing'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.184893) [[ -z ; e.g. GDRIVE_ZIP_FILE_ID=https://drive.google.com/file/d/1AbCdEF.../view?usp=sharing ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.184921) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.184948) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.184974) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.185001) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.185018) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.185096) line=';      GDRIVE_MANIFEST_FILE_ID=1ZyXwVu...'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.185117) [[ -z ;      GDRIVE_MANIFEST_FILE_ID=1ZyXwVu... ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.185138) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.185160) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.185178) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.185203) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.185222) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.185248) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.185267) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.185284) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.185306) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.185320) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.185344) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.185360) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.185380) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.185403) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.185420) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.185500) line='; ======== Rich UUPD metadata (Drive) ========'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.185526) [[ -z ; ======== Rich UUPD metadata (Drive) ======== ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.185549) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.185570) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.185587) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.185608) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.185624) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.185792) line='; Everything here is optional.auto-fill what we can from plugin headers (slug/name/version/requires/tested/requires_php).'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.185814) [[ -z ; Everything here is optional.auto-fill what we can from plugin headers (slug/name/version/requires/tested/requires_php). ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.185835) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.185854) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.185870) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.185890) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.185906) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.185930) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.185949) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.185965) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.185990) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.186006) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.186111) line='; Override plugin display name in manifest (defaults to PLUGIN_NAME)'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.186131) [[ -z ; Override plugin display name in manifest (defaults to PLUGIN_NAME) ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.186150) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.186168) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.186186) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.186217) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.186233) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.186292) line='UUPD_NAME=Notify for SureMail'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.186311) [[ -z UUPD_NAME=Notify for SureMail ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.186330) [[ U == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.186350) [[ U == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647719.186374) key=UUPD_NAME
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647719.186398) val='Notify for SureMail'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.206047) echo UUPD_NAME
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.215011) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.229869) key=UUPD_NAME
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.249928) echo 'Notify for SureMail'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.258735) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.276289) val='Notify for SureMail'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647719.276347) eval 'UUPD_NAME="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647719.276403) UUPD_NAME='Notify for SureMail'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.276449) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.276475) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.276535) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.276568) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.276600) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.276640) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.276665) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.276726) line='; Author info'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.276757) [[ -z ; Author info ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.276794) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.276826) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.276856) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.276892) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.276917) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.277009) line=UUPD_AUTHOR=ReallyUsefulPlugins.com
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.277039) [[ -z UUPD_AUTHOR=ReallyUsefulPlugins.com ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.277073) [[ U == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.277107) [[ U == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647719.277145) key=UUPD_AUTHOR
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647719.277174) val=ReallyUsefulPlugins.com
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.301878) echo UUPD_AUTHOR
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.310870) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.336975) key=UUPD_AUTHOR
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.358990) echo ReallyUsefulPlugins.com
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.368218) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.383515) val=ReallyUsefulPlugins.com
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647719.383607) eval 'UUPD_AUTHOR="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647719.383674) UUPD_AUTHOR=ReallyUsefulPlugins.com
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.383735) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.383767) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.383995) line=UUPD_AUTHOR_HOMEPAGE=https://reallyusefulplugins.com
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.384041) [[ -z UUPD_AUTHOR_HOMEPAGE=https://reallyusefulplugins.com ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.384086) [[ U == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.384126) [[ U == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647719.384176) key=UUPD_AUTHOR_HOMEPAGE
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647719.384229) val=https://reallyusefulplugins.com
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.406818) echo UUPD_AUTHOR_HOMEPAGE
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.415503) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.429064) key=UUPD_AUTHOR_HOMEPAGE
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.449113) echo https://reallyusefulplugins.com
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.458831) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.475154) val=https://reallyusefulplugins.com
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647719.475208) eval 'UUPD_AUTHOR_HOMEPAGE="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647719.475248) UUPD_AUTHOR_HOMEPAGE=https://reallyusefulplugins.com
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.475279) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.475298) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.475351) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.475373) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.475396) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.475420) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.475438) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.475563) line='; Explicit WP and PHP requirements (fallback to plugin headers if blank)'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.475587) [[ -z ; Explicit WP and PHP requirements (fallback to plugin headers if blank) ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.475614) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.475636) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.475655) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.475677) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.475693) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.475740) line=UUPD_REQUIRES=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.475761) [[ -z UUPD_REQUIRES= ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.475783) [[ U == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.475803) [[ U == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647719.475839) key=UUPD_REQUIRES
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647719.475865) val=
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.495780) echo UUPD_REQUIRES
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.505578) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.523870) key=UUPD_REQUIRES
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.544716) echo ''
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.553395) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.567843) val=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647719.567891) eval 'UUPD_REQUIRES="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647719.567927) UUPD_REQUIRES=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.567957) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.567975) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.568049) line=UUPD_TESTED=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.568073) [[ -z UUPD_TESTED= ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.568099) [[ U == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.568122) [[ U == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647719.568148) key=UUPD_TESTED
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647719.568173) val=
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.588696) echo UUPD_TESTED
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.598102) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.614566) key=UUPD_TESTED
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.634639) echo ''
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.646655) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.662589) val=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647719.662648) eval 'UUPD_TESTED="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647719.662689) UUPD_TESTED=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.662726) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.662743) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.662831) line=UUPD_REQUIRES_PHP=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.662859) [[ -z UUPD_REQUIRES_PHP= ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.662884) [[ U == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.662905) [[ U == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647719.662929) key=UUPD_REQUIRES_PHP
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647719.662953) val=
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.684295) echo UUPD_REQUIRES_PHP
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.694750) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.710080) key=UUPD_REQUIRES_PHP
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.731649) echo ''
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.741060) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.755732) val=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647719.755787) eval 'UUPD_REQUIRES_PHP="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647719.755828) UUPD_REQUIRES_PHP=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.755860) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.755879) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.755935) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.755960) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.755980) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.756006) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.756025) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.756165) line='; Sections: provide small HTML/text files; we’ll read them if paths exist.'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.756197) [[ -z ; Sections: provide small HTML/text files; we’ll read them if paths exist. ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.756228) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.756254) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.756277) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.756302) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.756320) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.756432) line=UUPD_SECTION_DESCRIPTION_FILE=uupd/section-description.html
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.756455) [[ -z UUPD_SECTION_DESCRIPTION_FILE=uupd/section-description.html ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.756478) [[ U == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.756502) [[ U == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647719.756534) key=UUPD_SECTION_DESCRIPTION_FILE
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647719.756565) val=uupd/section-description.html
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.779806) echo UUPD_SECTION_DESCRIPTION_FILE
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.788667) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.803423) key=UUPD_SECTION_DESCRIPTION_FILE
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.825680) echo uupd/section-description.html
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.837543) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.853654) val=uupd/section-description.html
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647719.853732) eval 'UUPD_SECTION_DESCRIPTION_FILE="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647719.853790) UUPD_SECTION_DESCRIPTION_FILE=uupd/section-description.html
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.853838) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.853861) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.854070) line=UUPD_SECTION_INSTALLATION_FILE=uupd/section-installation.html
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.854107) [[ -z UUPD_SECTION_INSTALLATION_FILE=uupd/section-installation.html ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.854149) [[ U == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.854185) [[ U == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647719.854224) key=UUPD_SECTION_INSTALLATION_FILE
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647719.854265) val=uupd/section-installation.html
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.875283) echo UUPD_SECTION_INSTALLATION_FILE
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.886099) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.912889) key=UUPD_SECTION_INSTALLATION_FILE
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.935382) echo uupd/section-installation.html
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.946960) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647719.959516) val=uupd/section-installation.html
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647719.959572) eval 'UUPD_SECTION_INSTALLATION_FILE="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647719.959615) UUPD_SECTION_INSTALLATION_FILE=uupd/section-installation.html
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.959648) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647719.959671) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647719.959833) line=UUPD_SECTION_FAQ_FILE=uupd/section-faq.html
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.959876) [[ -z UUPD_SECTION_FAQ_FILE=uupd/section-faq.html ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.959912) [[ U == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647719.959943) [[ U == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647719.959979) key=UUPD_SECTION_FAQ_FILE
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647719.960015) val=uupd/section-faq.html
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.985780) echo UUPD_SECTION_FAQ_FILE
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647719.994451) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647720.008031) key=UUPD_SECTION_FAQ_FILE
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647720.032462) echo uupd/section-faq.html
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647720.042991) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647720.057159) val=uupd/section-faq.html
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647720.057217) eval 'UUPD_SECTION_FAQ_FILE="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647720.057258) UUPD_SECTION_FAQ_FILE=uupd/section-faq.html
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.057289) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.057308) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647720.057518) line='; If you already keep an HTML changelog, point to it. Otherwise we can keep using your text changelog separately.'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.057550) [[ -z ; If you already keep an HTML changelog, point to it. Otherwise we can keep using your text changelog separately. ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.057588) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.057621) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.057648) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.057684) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.057709) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647720.057840) line=UUPD_SECTION_CHANGELOG_HTML_FILE=uupd/section-changelog.html
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.057864) [[ -z UUPD_SECTION_CHANGELOG_HTML_FILE=uupd/section-changelog.html ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.057894) [[ U == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.057952) [[ U == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647720.058009) key=UUPD_SECTION_CHANGELOG_HTML_FILE
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647720.058043) val=uupd/section-changelog.html
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647720.080071) echo UUPD_SECTION_CHANGELOG_HTML_FILE
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647720.090157) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647720.115655) key=UUPD_SECTION_CHANGELOG_HTML_FILE
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647720.137933) echo uupd/section-changelog.html
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647720.147964) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647720.176919) val=uupd/section-changelog.html
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647720.176992) eval 'UUPD_SECTION_CHANGELOG_HTML_FILE="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647720.177041) UUPD_SECTION_CHANGELOG_HTML_FILE=uupd/section-changelog.html
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.177079) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.177100) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647720.177154) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.177180) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.177202) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.177231) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.177251) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647720.177390) line='; “last_updated” will be generated automatically with local time.'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.177415) [[ -z ; “last_updated” will be generated automatically with local time. ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.177442) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.177468) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.177489) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.177513) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.177532) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647720.177648) line='; You can override it (format: YYYY-MM-DD HH:MM:SS) by setting:'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.177671) [[ -z ; You can override it (format: YYYY-MM-DD HH:MM:SS) by setting: ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.177696) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.177717) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.177737) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.177760) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.177778) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647720.177860) line='; UUPD_LAST_UPDATED=2025-11-08 23:07:30'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.177882) [[ -z ; UUPD_LAST_UPDATED=2025-11-08 23:07:30 ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.177904) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.177927) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.177946) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.177969) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.177985) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647720.178014) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.178035) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.178054) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.178076) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.178097) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647720.178222) line='; Download URL to show in the metadata (purely informational for UUPD).'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.178243) [[ -z ; Download URL to show in the metadata (purely informational for UUPD). ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.178276) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.178298) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.178318) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.178339) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.178356) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647720.178501) line='; If blank and you have GITHUB_REPO set, we’ll default to your GitHub “latest” asset.'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.178524) [[ -z ; If blank and you have GITHUB_REPO set, we’ll default to your GitHub “latest” asset. ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.178544) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.178566) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.178583) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.178612) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.178630) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647720.178680) line=UUPD_DOWNLOAD_URL=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.178701) [[ -z UUPD_DOWNLOAD_URL= ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.178722) [[ U == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.178744) [[ U == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647720.178770) key=UUPD_DOWNLOAD_URL
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647720.178796) val=
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647720.200562) echo UUPD_DOWNLOAD_URL
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647720.209291) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647720.223711) key=UUPD_DOWNLOAD_URL
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647720.245306) echo ''
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647720.255939) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647720.270497) val=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647720.270563) eval 'UUPD_DOWNLOAD_URL="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647720.270614) UUPD_DOWNLOAD_URL=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.270657) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.270684) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647720.270751) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.270785) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.270816) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.270849) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.270873) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647720.271078) line='; Banners / icons (use fully-qualified URLs). If blank and GITHUB_REPO is set,'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.271110) [[ -z ; Banners / icons (use fully-qualified URLs). If blank and GITHUB_REPO is set, ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.271144) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.271174) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.271204) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.271233) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.271257) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647720.271459) line='; we’ll auto-point at your repo’s /uupd/ assets on raw.githubusercontent.'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.271492) [[ -z ; we’ll auto-point at your repo’s /uupd/ assets on raw.githubusercontent. ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.271524) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.271555) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.271582) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.271616) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.271642) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647720.271894) line='; https://drive.google.com/thumbnail?id=1megB0O3LbaTfGKeh-RtdDUAOJsBgMCQi&sz=w256  # ID = ID W=Width'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.271928) [[ -z ; https://drive.google.com/thumbnail?id=1megB0O3LbaTfGKeh-RtdDUAOJsBgMCQi&sz=w256  # ID = ID W=Width ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.271958) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.271997) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.272024) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.272058) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.272081) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647720.272157) line=UUPD_BANNER_LOW=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.272197) [[ -z UUPD_BANNER_LOW= ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.272228) [[ U == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.272257) [[ U == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647720.272290) key=UUPD_BANNER_LOW
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647720.272320) val=
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647720.293146) echo UUPD_BANNER_LOW
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647720.304018) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647720.317597) key=UUPD_BANNER_LOW
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647720.337085) echo ''
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647720.345446) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647720.362899) val=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647720.362949) eval 'UUPD_BANNER_LOW="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647720.362987) UUPD_BANNER_LOW=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.363017) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.363036) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647720.363113) line=UUPD_BANNER_HIGH=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.363138) [[ -z UUPD_BANNER_HIGH= ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.363166) [[ U == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.363191) [[ U == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647720.363219) key=UUPD_BANNER_HIGH
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647720.363249) val=
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647720.383982) echo UUPD_BANNER_HIGH
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647720.396120) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647720.409868) key=UUPD_BANNER_HIGH
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647720.429625) echo ''
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647720.439625) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647720.456365) val=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647720.456460) eval 'UUPD_BANNER_HIGH="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647720.456541) UUPD_BANNER_HIGH=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.456601) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.456638) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647720.456933) line='UUPD_ICON_1X=https://drive.google.com/thumbnail?id=12DVmsA78CBVIkDGXkSMuFpg6qW6WaTSN&sz=w128'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.456977) [[ -z UUPD_ICON_1X=https://drive.google.com/thumbnail?id=12DVmsA78CBVIkDGXkSMuFpg6qW6WaTSN&sz=w128 ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.457023) [[ U == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.457053) [[ U == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647720.457182) key=UUPD_ICON_1X
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647720.457235) val='https://drive.google.com/thumbnail?id=12DVmsA78CBVIkDGXkSMuFpg6qW6WaTSN&sz=w128'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647720.479436) echo UUPD_ICON_1X
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647720.488571) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647720.517074) key=UUPD_ICON_1X
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647720.538366) echo 'https://drive.google.com/thumbnail?id=12DVmsA78CBVIkDGXkSMuFpg6qW6WaTSN&sz=w128'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647720.549560) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647720.578734) val='https://drive.google.com/thumbnail?id=12DVmsA78CBVIkDGXkSMuFpg6qW6WaTSN&sz=w128'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647720.578806) eval 'UUPD_ICON_1X="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647720.578866) UUPD_ICON_1X='https://drive.google.com/thumbnail?id=12DVmsA78CBVIkDGXkSMuFpg6qW6WaTSN&sz=w128'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.578923) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.578944) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647720.579127) line='UUPD_ICON_2X=https://drive.google.com/thumbnail?id=1megB0O3LbaTfGKeh-RtdDUAOJsBgMCQi&sz=w256'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.579155) [[ -z UUPD_ICON_2X=https://drive.google.com/thumbnail?id=1megB0O3LbaTfGKeh-RtdDUAOJsBgMCQi&sz=w256 ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.579185) [[ U == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.579219) [[ U == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:61](1762647720.579256) key=UUPD_ICON_2X
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:62](1762647720.579295) val='https://drive.google.com/thumbnail?id=1megB0O3LbaTfGKeh-RtdDUAOJsBgMCQi&sz=w256'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647720.600697) echo UUPD_ICON_2X
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647720.612619) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:63](1762647720.625253) key=UUPD_ICON_2X
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647720.645961) echo 'https://drive.google.com/thumbnail?id=1megB0O3LbaTfGKeh-RtdDUAOJsBgMCQi&sz=w256'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647720.655073) sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:64](1762647720.671910) val='https://drive.google.com/thumbnail?id=1megB0O3LbaTfGKeh-RtdDUAOJsBgMCQi&sz=w256'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647720.671965) eval 'UUPD_ICON_2X="$val"'
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:65](1762647720.672006) UUPD_ICON_2X='https://drive.google.com/thumbnail?id=1megB0O3LbaTfGKeh-RtdDUAOJsBgMCQi&sz=w256'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.672040) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.672059) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647720.672114) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.672138) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.672162) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.672189) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.672205) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647720.672271) line='; example link for UUPD'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.672294) [[ -z ; example link for UUPD ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.672321) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.672343) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.672363) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.672390) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.672409) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647720.672552) line='; https://drive.google.com/uc?export=download&id=1rBno_y2EjgBgnJwtXeF9pNsl0In-KvaR'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.672576) [[ -z ; https://drive.google.com/uc?export=download&id=1rBno_y2EjgBgnJwtXeF9pNsl0In-KvaR ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.672612) [[ ; == \# ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.672638) [[ ; == \; ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.672658) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.672683) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.672702) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:59](1762647720.672740) line=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.672772) [[ -z '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:60](1762647720.672799) continue
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.672831) IFS=
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.672850) read -r line
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:58](1762647720.672877) [[ -n '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:71](1762647720.672989) HEADER_SCRIPT='C:/Ignore By Avast/0. PATHED Items/Plugins/deployscripts/myplugin_headers.php'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:72](1762647720.673025) TOKEN_FILE='C:/Ignore By Avast/0. PATHED Items/Plugins/deployscripts/github_token.txt'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:73](1762647720.673068) GENERATOR_SCRIPT='C:/Ignore By Avast/0. PATHED Items/Plugins/deployscripts/generate_index.php'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:78](1762647720.673114) [[ -z notify-for-suremail ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:82](1762647720.673148) [[ -z stingray82/notify-for-suremail ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:86](1762647720.673177) ZIP_NAME=notify-for-suremail.zip
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:87](1762647720.673205) CHANGELOG_FILE='C:\Users\Nathan\Git\rup-changelogs\notify-for-suremail.txt'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:88](1762647720.673233) STATIC_FILE=static.txt
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:89](1762647720.673260) PLUGIN_NAME='Notify for SureMail'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:90](1762647720.673286) PLUGIN_TAGS='SureMail, Discord, Pushover, Slack, Webhook'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:93](1762647720.673320) [[ -n '' ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:96](1762647720.673348) DEPLOY_TARGETS=drive
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:99](1762647720.673375) repo_root='/c/Users/Nathan/Git/Plugins/Free Plugins/suremail-notify'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:100](1762647720.673402) plugin_dir='/c/Users/Nathan/Git/Plugins/Free Plugins/suremail-notify/notify-for-suremail'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:101](1762647720.673431) plugin_file='/c/Users/Nathan/Git/Plugins/Free Plugins/suremail-notify/notify-for-suremail/notify-for-suremail.php'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:102](1762647720.673458) readme_file='/c/Users/Nathan/Git/Plugins/Free Plugins/suremail-notify/notify-for-suremail/readme.txt'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:103](1762647720.673486) temp_readme='/c/Users/Nathan/Git/Plugins/Free Plugins/suremail-notify/notify-for-suremail/readme_temp.txt'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:104](1762647720.673513) static_subfolder='/c/Users/Nathan/Git/Plugins/Free Plugins/suremail-notify/uupd'
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:109](1762647720.673548) [[ -f /c/Users/Nathan/Git/Plugins/Free Plugins/suremail-notify/notify-for-suremail/notify-for-suremail.php ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:110](1762647720.673862) [[ -f C:\Users\Nathan\Git\rup-changelogs\notify-for-suremail.txt ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:111](1762647720.674047) [[ -f static.txt ]]
++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:116](1762647720.674209) winpty php.exe 'C:/Ignore By Avast/0. PATHED Items/Plugins/deployscripts/myplugin_headers.php' '/c/Users/Nathan/Git/Plugins/Free Plugins/suremail-notify/notify-for-suremail/notify-for-suremail.php'
+stdout is not a tty
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:116](1762647720.755121) rc=1
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:116](1762647720.755218) echo '[ERROR] at C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:116 -> winpty php.exe "$HEADER_SCRIPT" "$plugin_file" (exit 1)'
+[ERROR] at C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:116 -> winpty php.exe "$HEADER_SCRIPT" "$plugin_file" (exit 1)
+++ [C:\Users\Nathan\Git\Plugins\Free Plugins\suremail-notify\deploy-test.sh:116](1762647720.755257) exit 1
