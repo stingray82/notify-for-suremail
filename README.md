@@ -152,6 +152,134 @@ Notify for SureMail includes a **MainWP Child** helper that lets your MainWP Das
 - SureMail Connection Details
 - SureMail Status
 
+### Supported Defines
+
+Copy/paste any of the following into your site’s `wp-config.php`
+(above the line: *That’s all, stop editing!*)
+
+---
+
+### Pushover Configuration
+
+```php
+define('SUREMAIL_NOTIFY_PUSHOVER_APP_TOKEN', 'xxx');
+define('SUREMAIL_NOTIFY_PUSHOVER_USER_KEY',  'yyy');
+
+define('SUREMAIL_NOTIFY_PUSHOVER_DEVICE', 'iphone'); // optional
+define('SUREMAIL_NOTIFY_PUSHOVER_PRIORITY', 0);      // -2 .. 2
+```
+
+---
+
+### Discord Configuration
+
+```php
+define('SUREMAIL_NOTIFY_DISCORD_WEBHOOK_URL', 'https://discord.com/api/webhooks/...');
+```
+
+---
+
+### Slack Configuration
+
+```php
+define('SUREMAIL_NOTIFY_SLACK_WEBHOOK_URL', 'https://hooks.slack.com/services/...');
+```
+
+---
+
+### Generic Webhook Configuration
+
+```php
+define('SUREMAIL_NOTIFY_WEBHOOK_URL', 'https://example.com/webhook-endpoint');
+```
+
+---
+
+### Channel Enable Defines (Optional)
+
+If defined, these override and lock the admin checkboxes:
+
+```php
+define('SUREMAIL_NOTIFY_ENABLE_PUSHOVER', true);
+define('SUREMAIL_NOTIFY_ENABLE_DISCORD',  false);
+define('SUREMAIL_NOTIFY_ENABLE_SLACK',    false);
+define('SUREMAIL_NOTIFY_ENABLE_WEBHOOK',  false);
+```
+
+---
+
+### Global Payload Options
+
+```php
+define('SUREMAIL_NOTIFY_INCLUDE_BODY',    true);
+define('SUREMAIL_NOTIFY_INCLUDE_HEADERS', false);
+```
+
+---
+
+### Event Routing Overrides (Per Channel)
+
+Control which events each channel receives:
+
+```php
+// Pushover Events
+define('SUREMAIL_NOTIFY_PUSHOVER_EVENTS_SENT',    false);
+define('SUREMAIL_NOTIFY_PUSHOVER_EVENTS_FAILED',  true);
+define('SUREMAIL_NOTIFY_PUSHOVER_EVENTS_BLOCKED', true);
+
+// Discord Events
+define('SUREMAIL_NOTIFY_DISCORD_EVENTS_SENT',     false);
+define('SUREMAIL_NOTIFY_DISCORD_EVENTS_FAILED',   true);
+define('SUREMAIL_NOTIFY_DISCORD_EVENTS_BLOCKED',  true);
+
+// Slack Events
+define('SUREMAIL_NOTIFY_SLACK_EVENTS_SENT',       false);
+define('SUREMAIL_NOTIFY_SLACK_EVENTS_FAILED',     true);
+define('SUREMAIL_NOTIFY_SLACK_EVENTS_BLOCKED',    true);
+
+// Webhook Events
+define('SUREMAIL_NOTIFY_WEBHOOK_EVENTS_SENT',     false);
+define('SUREMAIL_NOTIFY_WEBHOOK_EVENTS_FAILED',   true);
+define('SUREMAIL_NOTIFY_WEBHOOK_EVENTS_BLOCKED',  true);
+```
+
+---
+
+### Locking Secrets (Recommended for MainWP)
+
+To prevent secrets being edited or cleared in wp-admin:
+
+```php
+define('SUREMAIL_NOTIFY_LOCK_SECRETS', true);
+```
+
+To lock everything not set in WPConfig 
+
+```php
+define('SUREMAIL_NOTIFY_LOCK_ADMIN', true);
+```
+
+
+
+When enabled:
+
+- Secret fields become read-only
+- Saved options cannot override wp-config values
+- Best practice for managed deployments
+
+---
+
+### Notes
+
+- wp-config defines always take priority over database settings  
+- Undefined options fall back to saved plugin settings  
+
+
+
+
+
+
+
 ---
 
 ## License

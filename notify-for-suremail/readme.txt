@@ -3,8 +3,8 @@ Contributors: reallyusefulplugins
 Donate link: https://reallyusefulplugins.com/donate
 Tags: SureMail, Discord, Pushover, Slack, Webhook
 Requires at least: 6.5
-Tested up to: 6.8.3
-Stable tag: 0.9.8
+Tested up to: 6.9
+Stable tag: 1.0.0
 Requires PHP: 8.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -23,6 +23,11 @@ Sends Pushover, Discord, Generic Webhook and Slack notifications when emails are
 == Frequently Asked Questions ==
 
 == Changelog ==
+= 1.0 Feb 2026 = 
+New: Hidden Input Fields
+New: WPConfig Setup
+Improve: All Forms are now individual Forms
+
 = 0.9.8 09 November 2025 =
 New: Update Deploy Script
 
