@@ -2,10 +2,10 @@
 /**
  * Plugin Name:       Notify for Suremail
  * Description:       Sends Pushover, Discord, Generic Webhook and Slack notifications when emails are blocked, fail, or succeed.
- * Tested up to:      6.9
+ * Tested up to:      6.9.4
  * Requires at least: 6.5
  * Requires PHP:      8.0
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            ReallyUsefulPlugins.com
  * Author URI:        https://reallyusefulplugins.com
  * License:           GPL-2.0+
@@ -20,7 +20,7 @@ require_once __DIR__ . '/inc/mainwp-child.php';
 require_once __DIR__ . '/inc/flowmattic.php';
 
 
-define('RUP_NOTIFY_FOR_SUREMAIL_VERSION', '1.0.0');
+define('RUP_NOTIFY_FOR_SUREMAIL_VERSION', '1.0.1');
 
 class Suremail_Notify {
     const OPTION_KEY = 'suremail_notify_options';
@@ -1804,6 +1804,7 @@ new Suremail_Notify();
 add_action( 'plugins_loaded', function() {
     require_once __DIR__ . '/inc/updater.php';
     $updater_config = [
+    	'vendor'      => 'RUP',
         'plugin_file' => plugin_basename( __FILE__ ),
         'slug'        => 'notify-for-suremail',
         'name'        => 'Notify For SureMail',
@@ -1811,7 +1812,7 @@ add_action( 'plugins_loaded', function() {
         'key'         => '',
         'server'      => 'https://raw.githubusercontent.com/stingray82/notify-for-suremail/main/uupd/index.json',
     ];
-    \RUP\Updater\Updater_V1::register( $updater_config );
+    \RUP\Updater\Updater_V2::register( $updater_config );
 }, 20);
 
 /** MainWP icon */
