@@ -2,10 +2,10 @@
 /**
  * Plugin Name:       Notify for Suremail
  * Description:       Sends Pushover, Discord, Generic Webhook and Slack notifications when emails are blocked, fail, or succeed.
- * Tested up to:      6.9.4
+ * Tested up to:      7.0
  * Requires at least: 6.5
  * Requires PHP:      8.0
- * Version:           1.0.1
+ * Version:           1.0.2
  * Author:            ReallyUsefulPlugins.com
  * Author URI:        https://reallyusefulplugins.com
  * License:           GPL-2.0+
@@ -20,7 +20,7 @@ require_once __DIR__ . '/inc/mainwp-child.php';
 require_once __DIR__ . '/inc/flowmattic.php';
 
 
-define('RUP_NOTIFY_FOR_SUREMAIL_VERSION', '1.0.1');
+define('RUP_NOTIFY_FOR_SUREMAIL_VERSION', '1.0.2');
 
 class Suremail_Notify {
     const OPTION_KEY = 'suremail_notify_options';
@@ -89,20 +89,46 @@ class Suremail_Notify {
 
         $payload = $this->build_payload( $event_title, $summary, $mail_data, $wp_error );
 
+        $this->debug_log( 'notify_all triggered', [
+            'event_slug'  => $event_slug,
+            'event_title' => $event_title,
+            'summary'     => $summary,
+        ] );
+
         // Respect per-channel event routing.
-        if ( ! empty( $opts['enable_pushover'] ) && $this->channel_wants_event( 'pushover', $event_slug, $opts ) ) {
-            $this->send_pushover( $payload, $opts );
-        }
+        foreach ( [ 'pushover', 'webhook', 'discord', 'slack' ] as $channel ) {
+            $enabled_key = 'enable_' . $channel;
+            $enabled     = ! empty( $opts[ $enabled_key ] );
+            $wants_event = $this->channel_wants_event( $channel, $event_slug, $opts );
 
-        if ( ! empty( $opts['enable_webhook'] ) && $this->channel_wants_event( 'webhook', $event_slug, $opts ) ) {
-            $this->send_webhook( $payload, $opts );
-        }
+            $this->debug_log( 'channel routing decision', [
+                'channel'          => $channel,
+                'event_slug'       => $event_slug,
+                'enabled_key'      => $enabled_key,
+                'enabled'          => $enabled ? 1 : 0,
+                'routing_key'      => sprintf( '%s_events_%s', $channel, $event_slug ),
+                'wants_event'      => $wants_event ? 1 : 0,
+                'will_attempt_send'=> ( $enabled && $wants_event ) ? 1 : 0,
+            ] );
 
-        if ( ! empty( $opts['enable_discord'] ) && $this->channel_wants_event( 'discord', $event_slug, $opts ) ) {
-            $this->send_discord( $payload, $opts );
-        }
-        if ( ! empty( $opts['enable_slack'] ) && $this->channel_wants_event( 'slack', $event_slug, $opts ) ) {
-            $this->send_slack( $payload, $opts );
+            if ( ! $enabled || ! $wants_event ) {
+                continue;
+            }
+
+            switch ( $channel ) {
+                case 'pushover':
+                    $this->send_pushover( $payload, $opts );
+                    break;
+                case 'webhook':
+                    $this->send_webhook( $payload, $opts );
+                    break;
+                case 'discord':
+                    $this->send_discord( $payload, $opts );
+                    break;
+                case 'slack':
+                    $this->send_slack( $payload, $opts );
+                    break;
+            }
         }
     }
 
@@ -117,6 +143,11 @@ class Suremail_Notify {
 
         // Normalize $mail_data into a tidy array
         $md = $this->normalize_mail_data( $mail_data );
+
+        // Capture From before optional header stripping so concise notifications can still show it.
+        if ( empty( $md['from'] ) ) {
+            $md['from'] = $this->extract_from_address( $md );
+        }
 
         // Error detail (if any)
         $err = null;
@@ -208,6 +239,53 @@ class Suremail_Notify {
         return $md;
     }
 
+    private function extract_from_address( array $mail_data ) : string {
+        if ( ! empty( $mail_data['from'] ) ) {
+            return is_array( $mail_data['from'] ) ? implode( ', ', $mail_data['from'] ) : (string) $mail_data['from'];
+        }
+
+        $headers = $mail_data['headers'] ?? '';
+        if ( is_array( $headers ) ) {
+            foreach ( $headers as $k => $v ) {
+                if ( is_string( $k ) && strtolower( trim( $k ) ) === 'from' ) {
+                    return trim( (string) $v );
+                }
+                if ( is_string( $v ) && preg_match( '/^from\s*:\s*(.+)$/im', $v, $m ) ) {
+                    return trim( $m[1] );
+                }
+            }
+        } elseif ( is_string( $headers ) && preg_match( '/^from\s*:\s*(.+)$/im', $headers, $m ) ) {
+            return trim( $m[1] );
+        }
+
+        return '';
+    }
+
+    private function render_concise_notification( array $payload ) : string {
+        $lines = [];
+        $lines[] = $payload['summary'];
+        $lines[] = 'Site: ' . ( $payload['site']['name'] ?? '' ) . ' (' . ( $payload['site']['url'] ?? '' ) . ')';
+        $lines[] = 'When: ' . ( $payload['time'] ?? '' );
+
+        if ( ! empty( $payload['mail']['to'] ) ) {
+            $lines[] = 'To: ' . (string) $payload['mail']['to'];
+        }
+        if ( ! empty( $payload['mail']['from'] ) ) {
+            $lines[] = 'From: ' . (string) $payload['mail']['from'];
+        }
+        if ( ! empty( $payload['mail']['subject'] ) ) {
+            $lines[] = 'Subject: ' . (string) $payload['mail']['subject'];
+        }
+
+        if ( ! empty( $payload['error']['message'] ) ) {
+            $lines[] = 'Error: ' . (string) $payload['error']['message'];
+        }
+
+        return implode( "\n", array_filter( $lines, static function( $line ) {
+            return trim( (string) $line ) !== '';
+        } ) );
+    }
+
     private function render_text_block( $payload ) {
         $lines   = [];
         $lines[] = $payload['summary'];
@@ -258,7 +336,7 @@ class Suremail_Notify {
             'token'   => $token,
             'user'    => $user,
             'title'   => $payload['title'],
-            'message' => $this->truncate( $payload['message'], 1024 ), // Pushover msg limit
+            'message' => $this->truncate( $this->render_concise_notification( $payload ), 1024 ), // Pushover msg limit
             'priority'=> intval( $opts['pushover_priority'] ?? 0 ),
         ];
         if ( ! empty( $opts['pushover_device'] ) ) {
@@ -271,16 +349,25 @@ class Suremail_Notify {
             'body'    => $body,
         ];
 
-        wp_remote_post( 'https://api.pushover.net/1/messages.json', $args );
+        $response = wp_remote_post( 'https://api.pushover.net/1/messages.json', $args );
+        $this->debug_http_response( 'pushover', $response );
     }
 
     private function send_discord( $payload, $opts ) {
         $url = trim( (string) ( $opts['discord_webhook_url'] ?? '' ) );
         if ( ! $url ) return;
 
-        $content = "**" . $payload['title'] . "**\n" .
-                   $payload['summary'] . "\n" .
-                   "```" . $this->truncate( $payload['message'], 1900 ) . "```";
+        // Keep Discord concise. Webhook content must be <= 2000 chars.
+        $content = "**" . $payload['title'] . "**
+" . $this->render_concise_notification( $payload );
+        $content = $this->truncate( $content, 1900 );
+
+        $this->debug_log( 'prepared outbound payload', [
+            'channel' => 'discord',
+            'length'  => strlen( $content ),
+            'limit'   => 1900,
+            'mode'    => 'concise',
+        ] );
 
         $args = [
             'timeout' => 8,
@@ -288,15 +375,25 @@ class Suremail_Notify {
             'body'    => wp_json_encode( [ 'content' => $content ] ),
         ];
 
-        wp_remote_post( $url, $args );
+        $response = wp_remote_post( $url, $args );
+        $this->debug_http_response( __FUNCTION__, $response );
     }
 
     private function send_slack( $payload, $opts ) {
         $url = trim( (string) ( $opts['slack_webhook_url'] ?? '' ) );
         if ( ! $url ) return;
 
-        $text = '*' . $payload['title'] . "*\n" . $payload['summary'] . "\n" .
-                "```\n" . $this->truncate( $payload['message'], 2900 ) . "\n```";
+        // Keep Slack concise. Some Slack-compatible/webhook endpoints reject text > 2000 chars.
+        $text = '*' . $payload['title'] . "*
+" . $this->render_concise_notification( $payload );
+        $text = $this->truncate( $text, 1900 );
+
+        $this->debug_log( 'prepared outbound payload', [
+            'channel' => 'slack',
+            'length'  => strlen( $text ),
+            'limit'   => 1900,
+            'mode'    => 'concise',
+        ] );
 
         $args = [
             'timeout' => 8,
@@ -304,8 +401,10 @@ class Suremail_Notify {
             'body'    => wp_json_encode( [ 'text' => $text ] ),
         ];
 
-        wp_remote_post( $url, $args );
+        $response = wp_remote_post( $url, $args );
+        $this->debug_http_response( __FUNCTION__, $response );
     }
+
 
 
 
@@ -321,13 +420,28 @@ class Suremail_Notify {
             'headers' => [ 'Content-Type' => 'application/json; charset=UTF-8' ],
             'body'    => wp_json_encode( $payload ),
         ];
-        wp_remote_post( $url, $args );
+        $response = wp_remote_post( $url, $args );
+        $this->debug_http_response( __FUNCTION__, $response );
     }
 
 private function truncate( $text, $limit ) {
         $text = (string) $text;
-        return ( strlen( $text ) > $limit ) ? substr( $text, 0, $limit - 1 ) . '…' : $text;
+        $limit = max( 0, intval( $limit ) );
+        if ( $limit <= 0 ) return '';
+        return ( strlen( $text ) > $limit ) ? substr( $text, 0, max( 0, $limit - 3 ) ) . '...' : $text;
     }
+
+    private function fit_text_with_wrappers( string $prefix, string $body, string $suffix, int $limit ) : string {
+        $limit = max( 0, $limit );
+        $available = $limit - strlen( $prefix ) - strlen( $suffix );
+
+        if ( $available <= 0 ) {
+            return $this->truncate( $prefix . $suffix, $limit );
+        }
+
+        return $prefix . $this->truncate( $body, $available ) . $suffix;
+    }
+
 
     /* -----------------------------
      * Settings + UI
@@ -1528,15 +1642,27 @@ public function render_settings_page() {
             ($event === self::EVT_FAILED) ? new WP_Error( 'wp_mail_failed', 'Simulated failure', [ 'smtp_code' => '450', 'smtp_detail' => 'Mailbox busy' ] ) : null
         );
 
-        // Respect routing for the event being tested.
+        // Respect the same routing for tests as live notifications.
         $opts = $this->get_options();
         $did_send = false;
-        if ( $channel === 'pushover' && ! empty( $opts['enable_pushover'] ) ) {
+
+        $valid_channels = [ 'pushover', 'discord', 'slack', 'webhook' ];
+        if ( ! in_array( $channel, $valid_channels, true ) ) {
+            $this->debug_log( 'test notification skipped: invalid channel', [ 'channel' => $channel, 'event' => $event ] );
+        } elseif ( ! $this->channel_wants_event( $channel, $event, $opts ) ) {
+            $this->debug_log( 'test notification skipped: event routing disabled', [
+                'channel'     => $channel,
+                'event'       => $event,
+                'routing_key' => sprintf( '%s_events_%s', $channel, $event ),
+            ] );
+        } elseif ( $channel === 'pushover' && ! empty( $opts['enable_pushover'] ) ) {
             $token = trim((string)($opts['pushover_app_token'] ?? ''));
             $user  = trim((string)($opts['pushover_user_key'] ?? ''));
             if ( $token && $user ) {
                 $this->send_pushover( $payload, $opts );
                 $did_send = true;
+            } else {
+                $this->debug_log( 'test notification skipped: pushover missing token/user', [ 'event' => $event ] );
             }
 
         } elseif ( $channel === 'discord' && ! empty( $opts['enable_discord'] ) ) {
@@ -1544,6 +1670,8 @@ public function render_settings_page() {
             if ( $url ) {
                 $this->send_discord( $payload, $opts );
                 $did_send = true;
+            } else {
+                $this->debug_log( 'test notification skipped: discord missing webhook url', [ 'event' => $event ] );
             }
 
         } elseif ( $channel === 'slack' && ! empty( $opts['enable_slack'] ) ) {
@@ -1551,6 +1679,8 @@ public function render_settings_page() {
             if ( $url ) {
                 $this->send_slack( $payload, $opts );
                 $did_send = true;
+            } else {
+                $this->debug_log( 'test notification skipped: slack missing webhook url', [ 'event' => $event ] );
             }
 
         } elseif ( $channel === 'webhook' && ! empty( $opts['enable_webhook'] ) ) {
@@ -1558,7 +1688,15 @@ public function render_settings_page() {
             if ( $url ) {
                 $this->send_webhook( $payload, $opts );
                 $did_send = true;
+            } else {
+                $this->debug_log( 'test notification skipped: webhook missing url', [ 'event' => $event ] );
             }
+        } else {
+            $this->debug_log( 'test notification skipped: channel disabled', [
+                'channel'     => $channel,
+                'event'       => $event,
+                'enabled_key' => 'enable_' . $channel,
+            ] );
         }
 
         set_transient(
@@ -1573,6 +1711,58 @@ public function render_settings_page() {
         wp_safe_redirect( admin_url( 'options-general.php?page=suremail-notify' ) );
         exit;
 
+    }
+
+    /* -----------------------------
+     * Debug logging
+     * --------------------------- */
+
+    private function debug_enabled() : bool {
+        if ( ! defined( 'SUREMAIL_NOTIFY_DEBUG_ALL' ) ) {
+            return false;
+        }
+
+        $raw = constant( 'SUREMAIL_NOTIFY_DEBUG_ALL' );
+        if ( is_bool( $raw ) ) return $raw;
+        if ( is_int( $raw ) ) return $raw !== 0;
+
+        $val = strtolower( trim( (string) $raw ) );
+        return in_array( $val, [ '1', 'true', 'yes', 'y', 'on' ], true );
+    }
+
+    private function debug_log( string $message, array $context = [] ) : void {
+        if ( ! $this->debug_enabled() ) {
+            return;
+        }
+
+        if ( ! empty( $context ) ) {
+            $message .= ' | ' . wp_json_encode( $context );
+        }
+
+        error_log( '[Notify for SureMail] ' . $message );
+    }
+
+    private function debug_http_response( string $channel, $response ) : void {
+        if ( ! $this->debug_enabled() ) {
+            return;
+        }
+
+        if ( is_wp_error( $response ) ) {
+            $this->debug_log( 'HTTP send failed', [
+                'channel' => $channel,
+                'code'    => $response->get_error_code(),
+                'message' => $response->get_error_message(),
+                'data'    => $response->get_error_data(),
+            ] );
+            return;
+        }
+
+        $this->debug_log( 'HTTP send response', [
+            'channel'       => $channel,
+            'response_code' => wp_remote_retrieve_response_code( $response ),
+            'response_msg'  => wp_remote_retrieve_response_message( $response ),
+            'body'          => $this->truncate( wp_remote_retrieve_body( $response ), 500 ),
+        ] );
     }
 
     /* -----------------------------
@@ -1780,8 +1970,9 @@ private function any_wpconfig_overrides_active() : bool {
         if ( defined($const_name) ) return true;
     }
 
-    // Global lock define?
+    // Global lock/debug defines?
     if ( defined('SUREMAIL_NOTIFY_LOCK_SECRETS') ) return true;
+    if ( defined('SUREMAIL_NOTIFY_DEBUG_ALL') ) return true;
 
     return false;
 }
