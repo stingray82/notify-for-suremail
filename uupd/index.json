@@ -1,19 +1,19 @@
 {
     "slug": "notify-for-suremail",
     "name": "Notify for Suremail",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "author": "ReallyUsefulPlugins.com",
     "author_homepage": "https://reallyusefulplugins.com",
     "requires_php": "8.0",
     "requires": "6.5",
-    "tested": "6.9.4",
+    "tested": "7.0",
     "sections": {
         "description": "Sends Pushover, Discord, Generic Webhook and Slack notifications when emails are blocked, fail, or succeed.",
         "installation": "1. Upload the `notify-for-suremail` folder to the `/wp-content/plugins/` directory.<br />\n2. Go to a Guttenberg page you will now have a new block.<br />\n3. use the configurator to modify the use bubbles embed",
         "frequently_asked_questions": "",
-        "changelog": "<h4>1.0.1 23 March 2026</h4><ul><li>Update: Updater to 2.0-Alpha</li><li>Update: Compatibility</li></ul><h4>1.0 Feb 2026</h4><ul><li>New: Hidden Input Fields</li><li>New: WPConfig Setup</li><li>Improve: All Forms are now individual Forms</li></ul><h4>0.9.8 09 November 2025</h4><ul><li>New: Update Deploy Script</li></ul><h4>0.9.7 22 August 2025</h4><ul><li>New: First Updater Test (Update)</li><li>New: Notify for Suremail</li></ul><h4>0.9.6 22 August 2025</h4><ul><li>New: Initial Release</li><li>New: First Updater Test</li></ul>"
+        "changelog": "<h4>1.0.2 31 May 2026</h4><ul><li>New: Added SUREMAIL_NOTIFY_DEBUG_ALL constant for detailed notification debugging and delivery tracing.</li><li>New: Added channel routing diagnostics to log event routing decisions and notification delivery attempts.</li><li>New: Added HTTP response logging for Pushover, Discord, Slack and generic webhook notifications.</li><li>Improve: Reduced notification payload size to improve compatibility with webhook providers and avoid message-length limits</li><li>Improve: Slack and Discord notifications have been simplified to use a concise notification format containing:Site name, Event type, Recipient, Sender, Subject, Error summary (where available)</li><li>Improve:Test notifications now use the same event-routing logic as live notifications, ensuring tests accurately reflect production behaviour.</li><li>Fixed: Fixed an issue where test notifications could succeed while live notifications were blocked by event-routing settings.</li><li>Fixed: Fixed Discord webhook failures caused by payloads exceeding Discord&#039;s message length limits.</li><li>Fixed: Fixed Slack webhook failures caused by oversized notification payloads.</li></ul><h4>1.0.1 23 March 2026</h4><ul><li>Update: Updater to 2.0-Alpha</li><li>Update: Compatibility</li></ul><h4>1.0 Feb 2026</h4><ul><li>New: Hidden Input Fields</li><li>New: WPConfig Setup</li><li>Improve: All Forms are now individual Forms</li></ul><h4>0.9.8 09 November 2025</h4><ul><li>New: Update Deploy Script</li></ul><h4>0.9.7 22 August 2025</h4><ul><li>New: First Updater Test (Update)</li><li>New: Notify for Suremail</li></ul><h4>0.9.6 22 August 2025</h4><ul><li>New: Initial Release</li><li>New: First Updater Test</li></ul>"
     },
-    "last_updated": "2026-03-23 15:04:03",
+    "last_updated": "2026-05-31 20:16:28",
     "download_url": "https://github.com/stingray82/notify-for-suremail/releases/latest/download/notify-for-suremail.zip",
     "banners": {
         "low": "https://raw.githubusercontent.com/stingray82/notify-for-suremail/main/uupd/banner-772x250.png",

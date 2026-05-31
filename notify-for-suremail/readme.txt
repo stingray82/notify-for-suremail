@@ -3,8 +3,8 @@ Contributors: reallyusefulplugins
 Donate link: https://reallyusefulplugins.com/donate
 Tags: SureMail, Discord, Pushover, Slack, Webhook
 Requires at least: 6.5
-Tested up to: 6.9.4
-Stable tag: 1.0.1
+Tested up to: 7.0
+Stable tag: 1.0.2
 Requires PHP: 8.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -23,6 +23,18 @@ Sends Pushover, Discord, Generic Webhook and Slack notifications when emails are
 == Frequently Asked Questions ==
 
 == Changelog ==
+= 1.0.2 31 May 2026 =
+
+New: Added SUREMAIL_NOTIFY_DEBUG_ALL constant for detailed notification debugging and delivery tracing.
+New: Added channel routing diagnostics to log event routing decisions and notification delivery attempts.
+New: Added HTTP response logging for Pushover, Discord, Slack and generic webhook notifications.
+Improve: Reduced notification payload size to improve compatibility with webhook providers and avoid message-length limits
+Improve: Slack and Discord notifications have been simplified to use a concise notification format containing:Site name, Event type, Recipient, Sender, Subject, Error summary (where available)
+Improve:Test notifications now use the same event-routing logic as live notifications, ensuring tests accurately reflect production behaviour.
+Fixed: Fixed an issue where test notifications could succeed while live notifications were blocked by event-routing settings.
+Fixed: Fixed Discord webhook failures caused by payloads exceeding Discord's message length limits.
+Fixed: Fixed Slack webhook failures caused by oversized notification payloads.
+
 = 1.0.1 23 March 2026 =
 Update: Updater to 2.0-Alpha
 Update: Compatibility
